@@ -39,10 +39,10 @@ def create_api_request(type,search):
         url += "tracks/by_artist/"
     elif type == LABEL:
         url += "releases/by_label/"
-    #elif THROW MAYOR PRGOGRAMMER TYPE ERROR
-    url += search
-    url += "?key="
-    url += key
+    elif 
+        print "create_api_request invoked with incorrect argument:" + TYPE
+        sys.exit()
+    url += search + "?key=" + key
     return url
 
 def parse_release_xml(release_xml):

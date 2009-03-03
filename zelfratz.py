@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 #coding=utf-8
 
-""" zelfratz is a tool to track artist and lable relaeses on digital-tunes """
+""" zelfratz is a tool to track artist and lable releases on digital-tunes """
 
 import pycurl
 import xml.dom.minidom

@@ -1,0 +1,552 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<releases>
+  <release>
+    <name>Ethanol / Ethanol (Pyro Remix)</name>
+    <url>http://www.digital-tunes.net/releases/ethanol___ethanol__pyro_remix_</url>
+    <internal-name>ethanol___ethanol__pyro_remix_</internal-name>
+    <internal-id>155613</internal-id>
+    <release-date>2009-01-19</release-date>
+    <live-date>2009-01-19</live-date>
+    <type>SINGLE</type>
+    <cat-num>DV007</cat-num>
+    <artwork-thumb>http://images.digital-tunes.net/releases/ethanol___ethanol__pyro_remix_/thumbnail.jpg</artwork-thumb>
+    <artwork-full>http://images.digital-tunes.net/releases/ethanol___ethanol__pyro_remix_/full_size.jpg</artwork-full>
+    <price-point>standard</price-point>
+    <eu-price>3.00</eu-price>
+    <non-eu-price>2.46</non-eu-price>
+    <mp3-only>false</mp3-only>
+    <label>
+      <name>Digital Venom</name>
+      <internal-name>digital_venom</internal-name>
+      <url>http://www.digital-tunes.net/labels/digital_venom</url>
+      <external-url>http://venominc.com</external-url>
+      <logo>http://images.digital-tunes.net/labels/digital-venom.jpg</logo>
+    </label>
+    <upc></upc>
+    <artists>
+      <artist internal-name="pyro">Pyro</artist>
+      <artist internal-name="eiton">Eiton</artist>
+    </artists>
+    <genres>
+      <genre internal-name="drum_and_bass">Drum and Bass</genre>
+    </genres>
+    <tracks>
+      <track>
+        <name>eiton - ethanol (pyro rmx)</name>
+        <number>2</number>
+        <mp3-clip>http://audio.digital-tunes.net/clips/ethanol___ethanol__pyro_remix_/02_eiton---ethanol--pyro-rmx-.mp3</mp3-clip>
+        <length>388</length>
+        <isrc></isrc>
+        <internal-id>163122</internal-id>
+        <eu-price>1.50</eu-price>
+        <non-eu-price>1.23</non-eu-price>
+        <formats>
+          <format bitrate="320">mp3</format>
+          <format>flac</format>
+          <format>wav</format>
+        </formats>
+        <artists>
+        </artists>
+      </track>
+      <track>
+        <name>eiton - ethanol</name>
+        <number>1</number>
+        <mp3-clip>http://audio.digital-tunes.net/clips/ethanol___ethanol__pyro_remix_/01_eiton---ethanol.mp3</mp3-clip>
+        <length>444</length>
+        <isrc></isrc>
+        <internal-id>163121</internal-id>
+        <eu-price>1.50</eu-price>
+        <non-eu-price>1.23</non-eu-price>
+        <formats>
+          <format bitrate="320">mp3</format>
+          <format>flac</format>
+          <format>wav</format>
+        </formats>
+        <artists>
+        </artists>
+      </track>
+    </tracks>
+  </release>
+  <release>
+    <name>Starogardzka EP</name>
+    <url>http://www.digital-tunes.net/releases/starogardzka_ep</url>
+    <internal-name>starogardzka_ep</internal-name>
+    <internal-id>150347</internal-id>
+    <release-date>2008-11-11</release-date>
+    <live-date>2008-11-12</live-date>
+    <type>EP</type>
+    <cat-num>DV006EP</cat-num>
+    <artwork-thumb>http://images.digital-tunes.net/releases/starogardzka_ep/thumbnail.jpg</artwork-thumb>
+    <artwork-full>http://images.digital-tunes.net/releases/starogardzka_ep/full_size.jpg</artwork-full>
+    <price-point>standard</price-point>
+    <eu-price>4.50</eu-price>
+    <non-eu-price>3.69</non-eu-price>
+    <mp3-only>false</mp3-only>
+    <label>
+      <name>Digital Venom</name>
+      <internal-name>digital_venom</internal-name>
+      <url>http://www.digital-tunes.net/labels/digital_venom</url>
+      <external-url>http://venominc.com</external-url>
+      <logo>http://images.digital-tunes.net/labels/digital-venom.jpg</logo>
+    </label>
+    <upc></upc>
+    <artists>
+      <artist internal-name="pyro">Pyro</artist>
+      <artist internal-name="pylon">Pylon</artist>
+    </artists>
+    <genres>
+      <genre internal-name="drum_and_bass">Drum and Bass</genre>
+      <genre internal-name="experimental_electronica">Experimental/Electronica</genre>
+    </genres>
+    <tracks>
+      <track>
+        <name>pylon - teslan</name>
+        <number>2</number>
+        <mp3-clip>http://audio.digital-tunes.net/clips/starogardzka_ep/02_pylon---teslan.mp3</mp3-clip>
+        <length>392</length>
+        <isrc></isrc>
+        <internal-id>142308</internal-id>
+        <eu-price>1.50</eu-price>
+        <non-eu-price>1.23</non-eu-price>
+        <formats>
+          <format bitrate="320">mp3</format>
+          <format>flac</format>
+          <format>wav</format>
+        </formats>
+        <artists>
+        </artists>
+      </track>
+      <track>
+        <name>pylon - central dogma</name>
+        <number>3</number>
+        <mp3-clip>http://audio.digital-tunes.net/clips/starogardzka_ep/03_pylon---central-dogma.mp3</mp3-clip>
+        <length>363</length>
+        <isrc></isrc>
+        <internal-id>142312</internal-id>
+        <eu-price>1.50</eu-price>
+        <non-eu-price>1.23</non-eu-price>
+        <formats>
+          <format bitrate="320">mp3</format>
+          <format>flac</format>
+          <format>wav</format>
+        </formats>
+        <artists>
+        </artists>
+      </track>
+      <track>
+        <name>pylon &amp; pyro - auror</name>
+        <number>1</number>
+        <mp3-clip>http://audio.digital-tunes.net/clips/starogardzka_ep/01_pylon---pyro---auror.mp3</mp3-clip>
+        <length>368</length>
+        <isrc></isrc>
+        <internal-id>142368</internal-id>
+        <eu-price>1.50</eu-price>
+        <non-eu-price>1.23</non-eu-price>
+        <formats>
+          <format bitrate="320">mp3</format>
+          <format>flac</format>
+          <format>wav</format>
+        </formats>
+        <artists>
+        </artists>
+      </track>
+    </tracks>
+  </release>
+  <release>
+    <name>Commutator / Crime</name>
+    <url>http://www.digital-tunes.net/releases/commutator___crime</url>
+    <internal-name>commutator___crime</internal-name>
+    <internal-id>147664</internal-id>
+    <release-date>2008-10-07</release-date>
+    <live-date>2008-10-07</live-date>
+    <type>SINGLE</type>
+    <cat-num>DV05</cat-num>
+    <artwork-thumb>http://images.digital-tunes.net/releases/commutator___crime/thumbnail.jpg</artwork-thumb>
+    <artwork-full>http://images.digital-tunes.net/releases/commutator___crime/full_size.jpg</artwork-full>
+    <price-point>standard</price-point>
+    <eu-price>3.00</eu-price>
+    <non-eu-price>2.46</non-eu-price>
+    <mp3-only>false</mp3-only>
+    <label>
+      <name>Digital Venom</name>
+      <internal-name>digital_venom</internal-name>
+      <url>http://www.digital-tunes.net/labels/digital_venom</url>
+      <external-url>http://venominc.com</external-url>
+      <logo>http://images.digital-tunes.net/labels/digital-venom.jpg</logo>
+    </label>
+    <upc></upc>
+    <artists>
+      <artist internal-name="yabol">Yabol</artist>
+    </artists>
+    <genres>
+      <genre internal-name="drum_and_bass">Drum and Bass</genre>
+    </genres>
+    <tracks>
+      <track>
+        <name>Yabol - Crime WAV</name>
+        <number>2</number>
+        <mp3-clip>http://audio.digital-tunes.net/clips/commutator___crime/02_Yabol---Crime-WAV.mp3</mp3-clip>
+        <length>465</length>
+        <isrc></isrc>
+        <internal-id>133917</internal-id>
+        <eu-price>1.50</eu-price>
+        <non-eu-price>1.23</non-eu-price>
+        <formats>
+          <format bitrate="320">mp3</format>
+          <format>flac</format>
+          <format>wav</format>
+        </formats>
+        <artists>
+        </artists>
+      </track>
+      <track>
+        <name>Yabol - Commutator WAV</name>
+        <number>1</number>
+        <mp3-clip>http://audio.digital-tunes.net/clips/commutator___crime/01_Yabol---Commutator-WAV.mp3</mp3-clip>
+        <length>374</length>
+        <isrc></isrc>
+        <internal-id>133874</internal-id>
+        <eu-price>1.50</eu-price>
+        <non-eu-price>1.23</non-eu-price>
+        <formats>
+          <format bitrate="320">mp3</format>
+          <format>flac</format>
+          <format>wav</format>
+        </formats>
+        <artists>
+        </artists>
+      </track>
+    </tracks>
+  </release>
+  <release>
+    <name>Minds Eye (Amex remix)</name>
+    <url>http://www.digital-tunes.net/releases/minds_eye__amex_remix_</url>
+    <internal-name>minds_eye__amex_remix_</internal-name>
+    <internal-id>147592</internal-id>
+    <release-date>2008-10-05</release-date>
+    <live-date>2008-10-06</live-date>
+    <type>SINGLE</type>
+    <cat-num>DVLTD01</cat-num>
+    <artwork-thumb>http://images.digital-tunes.net/releases/minds_eye__amex_remix_/thumbnail.jpg</artwork-thumb>
+    <artwork-full>http://images.digital-tunes.net/releases/minds_eye__amex_remix_/full_size.jpg</artwork-full>
+    <price-point>budget</price-point>
+    <eu-price>1.00</eu-price>
+    <non-eu-price>0.82</non-eu-price>
+    <mp3-only>false</mp3-only>
+    <label>
+      <name>Digital Venom</name>
+      <internal-name>digital_venom</internal-name>
+      <url>http://www.digital-tunes.net/labels/digital_venom</url>
+      <external-url>http://venominc.com</external-url>
+      <logo>http://images.digital-tunes.net/labels/digital-venom.jpg</logo>
+    </label>
+    <upc></upc>
+    <artists>
+      <artist internal-name="gravity_zero">Gravity Zero</artist>
+    </artists>
+    <genres>
+      <genre internal-name="drum_and_bass">Drum and Bass</genre>
+      <genre internal-name="experimental_electronica">Experimental/Electronica</genre>
+    </genres>
+    <tracks>
+      <track>
+        <name>Minds Eye (Amex Remix)</name>
+        <number>1</number>
+        <mp3-clip>http://audio.digital-tunes.net/clips/minds_eye__amex_remix_/01_Minds-Eye--Amex-Remix-.mp3</mp3-clip>
+        <length>429</length>
+        <isrc></isrc>
+        <internal-id>133661</internal-id>
+        <eu-price>1.00</eu-price>
+        <non-eu-price>0.82</non-eu-price>
+        <formats>
+          <format bitrate="320">mp3</format>
+          <format>flac</format>
+          <format>wav</format>
+        </formats>
+        <artists>
+          <artist internal-name="gravity_zero">Gravity Zero</artist>
+        </artists>
+      </track>
+    </tracks>
+  </release>
+  <release>
+    <name>Carnivore / Finally Schranz</name>
+    <url>http://www.digital-tunes.net/releases/carnivore___finally_schranz</url>
+    <internal-name>carnivore___finally_schranz</internal-name>
+    <internal-id>144235</internal-id>
+    <release-date>2008-08-25</release-date>
+    <live-date>2008-08-26</live-date>
+    <type>SINGLE</type>
+    <cat-num>DV004</cat-num>
+    <artwork-thumb>http://images.digital-tunes.net/releases/carnivore___finally_schranz/thumbnail.jpg</artwork-thumb>
+    <artwork-full>http://images.digital-tunes.net/releases/carnivore___finally_schranz/full_size.jpg</artwork-full>
+    <price-point>standard</price-point>
+    <eu-price>3.00</eu-price>
+    <non-eu-price>2.46</non-eu-price>
+    <mp3-only>false</mp3-only>
+    <label>
+      <name>Digital Venom</name>
+      <internal-name>digital_venom</internal-name>
+      <url>http://www.digital-tunes.net/labels/digital_venom</url>
+      <external-url>http://venominc.com</external-url>
+      <logo>http://images.digital-tunes.net/labels/digital-venom.jpg</logo>
+    </label>
+    <upc></upc>
+    <artists>
+      <artist internal-name="walder">Walder</artist>
+      <artist internal-name="amex">Amex</artist>
+      <artist internal-name="pylon">Pylon</artist>
+      <artist internal-name="johan_thunberg">Johan Thunberg</artist>
+    </artists>
+    <genres>
+      <genre internal-name="drum_and_bass">Drum and Bass</genre>
+    </genres>
+    <tracks>
+      <track>
+        <name>Finally Schranz (Amex Remix)</name>
+        <number>2</number>
+        <mp3-clip>http://audio.digital-tunes.net/clips/carnivore___finally_schranz/02_Finally-Schranz--Amex-Remix-.mp3</mp3-clip>
+        <length>381</length>
+        <isrc></isrc>
+        <internal-id>120590</internal-id>
+        <eu-price>1.50</eu-price>
+        <non-eu-price>1.23</non-eu-price>
+        <formats>
+          <format bitrate="320">mp3</format>
+          <format>flac</format>
+          <format>wav</format>
+        </formats>
+        <artists>
+          <artist internal-name="johan_thunberg">Johan Thunberg</artist>
+        </artists>
+      </track>
+      <track>
+        <name>Carnivore</name>
+        <number>1</number>
+        <mp3-clip>http://audio.digital-tunes.net/clips/carnivore___finally_schranz/01_Carnivore.mp3</mp3-clip>
+        <length>364</length>
+        <isrc></isrc>
+        <internal-id>120589</internal-id>
+        <eu-price>1.50</eu-price>
+        <non-eu-price>1.23</non-eu-price>
+        <formats>
+          <format bitrate="320">mp3</format>
+          <format>flac</format>
+          <format>wav</format>
+        </formats>
+        <artists>
+          <artist internal-name="walder">Walder</artist>
+          <artist internal-name="amex">Amex</artist>
+          <artist internal-name="pylon">Pylon</artist>
+        </artists>
+      </track>
+    </tracks>
+  </release>
+  <release>
+    <name>Life/Minds Eye</name>
+    <url>http://www.digital-tunes.net/releases/life_minds_eye</url>
+    <internal-name>life_minds_eye</internal-name>
+    <internal-id>142125</internal-id>
+    <release-date>2008-07-11</release-date>
+    <live-date>2008-07-12</live-date>
+    <type>SINGLE</type>
+    <cat-num>DV003</cat-num>
+    <artwork-thumb>http://images.digital-tunes.net/releases/life_minds_eye/thumbnail.jpg</artwork-thumb>
+    <artwork-full>http://images.digital-tunes.net/releases/life_minds_eye/full_size.jpg</artwork-full>
+    <price-point>standard</price-point>
+    <eu-price>3.00</eu-price>
+    <non-eu-price>2.46</non-eu-price>
+    <mp3-only>false</mp3-only>
+    <label>
+      <name>Digital Venom</name>
+      <internal-name>digital_venom</internal-name>
+      <url>http://www.digital-tunes.net/labels/digital_venom</url>
+      <external-url>http://venominc.com</external-url>
+      <logo>http://images.digital-tunes.net/labels/digital-venom.jpg</logo>
+    </label>
+    <upc></upc>
+    <artists>
+      <artist internal-name="gravity_zero">Gravity Zero</artist>
+    </artists>
+    <genres>
+      <genre internal-name="drum_and_bass">Drum and Bass</genre>
+    </genres>
+    <tracks>
+      <track>
+        <name>Life</name>
+        <number>1</number>
+        <mp3-clip>http://audio.digital-tunes.net/clips/life_minds_eye/01_Life.mp3</mp3-clip>
+        <length>450</length>
+        <isrc></isrc>
+        <internal-id>112425</internal-id>
+        <eu-price>1.50</eu-price>
+        <non-eu-price>1.23</non-eu-price>
+        <formats>
+          <format bitrate="320">mp3</format>
+          <format>flac</format>
+          <format>wav</format>
+        </formats>
+        <artists>
+          <artist internal-name="gravity_zero">Gravity Zero</artist>
+        </artists>
+      </track>
+      <track>
+        <name>Minds Eye</name>
+        <number>2</number>
+        <mp3-clip>http://audio.digital-tunes.net/clips/life_minds_eye/02_Minds-Eye.mp3</mp3-clip>
+        <length>450</length>
+        <isrc></isrc>
+        <internal-id>112426</internal-id>
+        <eu-price>1.50</eu-price>
+        <non-eu-price>1.23</non-eu-price>
+        <formats>
+          <format bitrate="320">mp3</format>
+          <format>flac</format>
+          <format>wav</format>
+        </formats>
+        <artists>
+          <artist internal-name="gravity_zero">Gravity Zero</artist>
+        </artists>
+      </track>
+    </tracks>
+  </release>
+  <release>
+    <name>Saboteur/Submission</name>
+    <url>http://www.digital-tunes.net/releases/saboteur_submission</url>
+    <internal-name>saboteur_submission</internal-name>
+    <internal-id>141192</internal-id>
+    <release-date>2008-06-27</release-date>
+    <live-date>2008-06-27</live-date>
+    <type>SINGLE</type>
+    <cat-num>DV002</cat-num>
+    <artwork-thumb>http://images.digital-tunes.net/releases/saboteur_submission/thumbnail.jpg</artwork-thumb>
+    <artwork-full>http://images.digital-tunes.net/releases/saboteur_submission/full_size.jpg</artwork-full>
+    <price-point>standard</price-point>
+    <eu-price>3.00</eu-price>
+    <non-eu-price>2.46</non-eu-price>
+    <mp3-only>false</mp3-only>
+    <label>
+      <name>Digital Venom</name>
+      <internal-name>digital_venom</internal-name>
+      <url>http://www.digital-tunes.net/labels/digital_venom</url>
+      <external-url>http://venominc.com</external-url>
+      <logo>http://images.digital-tunes.net/labels/digital-venom.jpg</logo>
+    </label>
+    <upc></upc>
+    <artists>
+      <artist internal-name="walder">Walder</artist>
+      <artist internal-name="split_concept">Split Concept</artist>
+    </artists>
+    <genres>
+      <genre internal-name="drum_and_bass">Drum and Bass</genre>
+    </genres>
+    <tracks>
+      <track>
+        <name>Saboteur</name>
+        <number>1</number>
+        <mp3-clip>http://audio.digital-tunes.net/clips/saboteur_submission/01_Saboteur.mp3</mp3-clip>
+        <length>398</length>
+        <isrc></isrc>
+        <internal-id>109351</internal-id>
+        <eu-price>1.50</eu-price>
+        <non-eu-price>1.23</non-eu-price>
+        <formats>
+          <format bitrate="320">mp3</format>
+          <format>flac</format>
+          <format>wav</format>
+        </formats>
+        <artists>
+          <artist internal-name="walder">Walder</artist>
+        </artists>
+      </track>
+      <track>
+        <name>Submission</name>
+        <number>2</number>
+        <mp3-clip>http://audio.digital-tunes.net/clips/saboteur_submission/02_Submission.mp3</mp3-clip>
+        <length>360</length>
+        <isrc></isrc>
+        <internal-id>109352</internal-id>
+        <eu-price>1.50</eu-price>
+        <non-eu-price>1.23</non-eu-price>
+        <formats>
+          <format bitrate="320">mp3</format>
+          <format>flac</format>
+          <format>wav</format>
+        </formats>
+        <artists>
+          <artist internal-name="split_concept">Split Concept</artist>
+        </artists>
+      </track>
+    </tracks>
+  </release>
+  <release>
+    <name>Bad Entity / Depraved</name>
+    <url>http://www.digital-tunes.net/releases/bad_entity___depraved</url>
+    <internal-name>bad_entity___depraved</internal-name>
+    <internal-id>140458</internal-id>
+    <release-date>2008-06-13</release-date>
+    <live-date>2008-06-14</live-date>
+    <type>SINGLE</type>
+    <cat-num>DV001</cat-num>
+    <artwork-thumb>http://images.digital-tunes.net/releases/bad_entity___depraved__dv001_/thumbnail.jpg</artwork-thumb>
+    <artwork-full>http://images.digital-tunes.net/releases/bad_entity___depraved__dv001_/full_size.jpg</artwork-full>
+    <price-point>standard</price-point>
+    <eu-price>3.00</eu-price>
+    <non-eu-price>2.46</non-eu-price>
+    <mp3-only>false</mp3-only>
+    <label>
+      <name>Digital Venom</name>
+      <internal-name>digital_venom</internal-name>
+      <url>http://www.digital-tunes.net/labels/digital_venom</url>
+      <external-url>http://venominc.com</external-url>
+      <logo>http://images.digital-tunes.net/labels/digital-venom.jpg</logo>
+    </label>
+    <upc></upc>
+    <artists>
+      <artist internal-name="identity">Identity</artist>
+      <artist internal-name="identity___logical">Identity &amp; Logical</artist>
+    </artists>
+    <genres>
+      <genre internal-name="drum_and_bass">Drum and Bass</genre>
+    </genres>
+    <tracks>
+      <track>
+        <name>Bad Entity</name>
+        <number>1</number>
+        <mp3-clip>http://audio.digital-tunes.net/clips/bad_entity___depraved__dv001_/01_Bad-Entity.mp3</mp3-clip>
+        <length>369</length>
+        <isrc></isrc>
+        <internal-id>106245</internal-id>
+        <eu-price>1.50</eu-price>
+        <non-eu-price>1.23</non-eu-price>
+        <formats>
+          <format bitrate="320">mp3</format>
+          <format>flac</format>
+          <format>wav</format>
+        </formats>
+        <artists>
+          <artist internal-name="identity___logical">Identity &amp; Logical</artist>
+        </artists>
+      </track>
+      <track>
+        <name>Depraved</name>
+        <number>2</number>
+        <mp3-clip>http://audio.digital-tunes.net/clips/bad_entity___depraved__dv001_/02_Depraved.mp3</mp3-clip>
+        <length>410</length>
+        <isrc></isrc>
+        <internal-id>106246</internal-id>
+        <eu-price>1.50</eu-price>
+        <non-eu-price>1.23</non-eu-price>
+        <formats>
+          <format bitrate="320">mp3</format>
+          <format>flac</format>
+          <format>wav</format>
+        </formats>
+        <artists>
+          <artist internal-name="identity">Identity</artist>
+        </artists>
+      </track>
+    </tracks>
+  </release>
+</releases>
+

@@ -5,6 +5,7 @@
 
 import pycurl
 import xml.dom.minidom
+import StringIO
 
 ARTIST = 1
 LABEL = 2
@@ -29,24 +30,24 @@ def __init__():
     global curl
     curl = pycurl.Curl()
     global key
-    key = read_key_from_file()
+    key = read_key_from_file('api-key')
 
 def create_api_request(type,search):
     """ create a digital-tunes api request as a string """
-    url = 'http://api.digital-tunes.net/releases'
+    url = 'http://api.digital-tunes.net/'
     if type == ARTIST:
-        url += "by_artist/"
+        url += "tracks/by_artist/"
     elif type == LABEL:
-        url += "by_label/"
+        url += "releases/by_label/"
     #elif THROW MAYOR PRGOGRAMMER TYPE ERROR
     url += search
     url += "?key="
     url += key
     return url
 
-def parse_artist_xml(release_xml):
+def parse_release_xml(release_xml):
     """ parse xml returned by a 'release' query into list of release obkects """
-    x = xml.dom.minidom.parseString(artist_xml)
+    x = xml.dom.minidom.parseString(release_xml)
     releases = list()
     for rel in x.getElementsByTagName('release'):
         name = rel.getElementsByTagName('name')[0].firstChild.data
@@ -61,9 +62,9 @@ def parse_artist_xml(release_xml):
         releases.append(release(name,artists,label,url))
     return releases
     
-def read_key_from_file():
+def read_key_from_file(filename):
     """ read the application specific key from a file """
-    file = open('api-key')
+    file = open(filename)
     key = file.readline()
     key = key.rstrip()
     file.close()
@@ -72,12 +73,18 @@ def read_key_from_file():
 def do_api_call(url):
     """ do the api call to digital-tunes and return the xml """
     curl.setopt(pycurl.URL, url)
-    return curl.perform()
+    b = StringIO.StringIO()
+    curl.setopt(pycurl.WRITEFUNCTION, b.write)
+    curl.perform()
+    return b.getvalue()
 
 if __name__ ==  "__main__":
     __init__()
-    x = open('artists.xml').read()
-    li = parse_artist_xml(x)
-    for l in li:
-        l.pretty_print()
+    url = create_api_request(ARTIST,"pyro")
+    x = do_api_call(url)
+    print x
+    #print parse_release_xml(x)
+    #li = parse_release_xml(x)
+    #for l in li:
+    #    l.pretty_print()
 

@@ -25,6 +25,19 @@ class release():
         print "on label: ", self.label.encode()
         print "url: ", self.url.encode()
 
+class track():
+    """ holds really basic information about a track """
+    def __init__(self, name, release, label,url)
+        self.name = name
+        self.release = release
+        self.label = label
+        self.url = url
+    def pretty_print(self):
+        print "track: "self.name.encode()
+        print "in release: " self.release.encode()
+        print "on label: ", self.label.encode()
+        print "url: ", self.url.encode()
+
 def __init__():
     """ perform initialisation of libcurl and read api key from file """
     global curl

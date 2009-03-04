@@ -89,15 +89,14 @@ def do_api_call(url):
 def read_key_from_file(filename):
     """ read the application specific key from a file """
     file = open(filename,'r')
-    key = file.readline()
-    key = key.rstrip()
+    key = file.readline().rstrip()
     file.close()
     return key
 
 def read_list_from_file(filename):
     """ read the list strings from a file """
     file = open(filename,'r')
-    l = file.readline()
+    l = [s.rstrip() for s in file.readlines()]
     file.close()
     return l
 

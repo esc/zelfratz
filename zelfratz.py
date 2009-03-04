@@ -33,7 +33,7 @@ class track():
         print "url: ", self.url.encode()
 
 def __init__():
-    """ perform initialisation of libcurl and read api key from file """
+    """ perform initialisation of libcurl """
     global curl
     curl = pycurl.Curl()
 

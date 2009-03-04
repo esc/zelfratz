@@ -36,8 +36,6 @@ def __init__():
     """ perform initialisation of libcurl and read api key from file """
     global curl
     curl = pycurl.Curl()
-    global key
-    key = read_key_from_file('api-key')
 
 def create_api_request(type,search):
     """ create a digital-tunes api request as a string """
@@ -118,7 +116,7 @@ def main():
 
     p.add_option('--labels' , '-l',
             default='~/.zelfratz/labels',
-            help='file that contains a list of lables',
+            help='file that contains a list of labels',
             dest='labels')
 
     p.add_option('--cache', '-c',
@@ -127,6 +125,11 @@ def main():
             dest='cache')
 
     options, arguments = p.parse_args()
+
+    global key
+    key = read_key_from_file(options.apikey)
+    artists = read_list_from_file(options.artists)
+    labels = read_list_from_file(options.labels)
 
 if __name__ ==  "__main__":
     main()

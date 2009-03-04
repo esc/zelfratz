@@ -7,8 +7,7 @@ import pycurl, xml.dom.minidom, StringIO, optparse
 
 ARTIST = 1
 LABEL = 2
-key = "666"
-curl = None
+curl = pycurl.Curl()
 
 class release():
     """ holds really basic information about a release """
@@ -32,12 +31,7 @@ class track():
         print "track: ", self.name.encode()
         print "url: ", self.url.encode()
 
-def __init__():
-    """ perform initialisation of libcurl """
-    global curl
-    curl = pycurl.Curl()
-
-def create_api_request(type,search):
+def create_api_request(type,search,key):
     """ create a digital-tunes api request as a string """
     url = 'http://api.digital-tunes.net/releases/'
     if type == ARTIST:

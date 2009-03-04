@@ -97,12 +97,40 @@ def do_api_call(url):
     curl.perform()
     return b.getvalue()
 
-if __name__ ==  "__main__":
-    __init__()
-    url = create_api_request(ARTIST,"pyro")
-    x = do_api_call(url)
-    print x
-    li = parse_track_xml(x)
-    for l in li:
-        l.pretty_print()
 
+def main():
+    p = optparse.OptionParser()
+
+    p.add_option('--apikey', '-k',
+            default="~/.zelfratz/api-key",
+            help='file that contains the api key',
+            dest='apikey')
+
+    p.add_option('--artists', '-a',
+            default='~/.zelfratz/artists',
+            help='file that contains a list of artists',
+            dest='artists')
+
+    p.add_option('--labels' , '-l',
+            default='~/.zelfratz/labels',
+            help='file that contains a list of lables',
+            dest='labels')
+
+    p.add_option('--cache', '-c',
+            default='~/.zelfratz/cache',
+            help='file to use as cache',
+            dest='cache')
+
+    options, arguments = p.parse_args()
+
+if __name__ ==  "__main__":
+    main()
+#    t= track(name,url)
+#    __init__()
+#    url = create_api_request(ARTIST,"pyro")
+#    x = do_api_call(url)
+#    print x
+#    li = parse_track_xml(x)
+#    for l in li:
+#        l.pretty_print()
+#

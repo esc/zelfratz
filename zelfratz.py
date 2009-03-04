@@ -39,11 +39,11 @@ def __init__():
 
 def create_api_request(type,search):
     """ create a digital-tunes api request as a string """
-    url = 'http://api.digital-tunes.net/'
+    url = 'http://api.digital-tunes.net/releases/'
     if type == ARTIST:
-        url += "tracks/by_artist/"
+        url += "by_artist/"
     elif type == LABEL:
-        url += "releases/by_label/"
+        url += "by_label/"
     else:
         print "create_api_request invoked with incorrect argument:" + TYPE
         sys.exit()

@@ -3,9 +3,7 @@
 
 """ zelfratz is a tool to track artist and lable releases on digital-tunes """
 
-import pycurl
-import xml.dom.minidom
-import StringIO
+import pycurl, xml.dom.minidom, StringIO, optparse
 
 ARTIST = 1
 LABEL = 2

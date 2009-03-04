@@ -80,15 +80,6 @@ def parse_track_xml(track_xml):
         tracks.append(track(name,u))
     return tracks
 
-    
-def read_key_from_file(filename):
-    """ read the application specific key from a file """
-    file = open(filename)
-    key = file.readline()
-    key = key.rstrip()
-    file.close()
-    return key
-
 def do_api_call(url):
     """ do the api call to digital-tunes and return the xml """
     curl.setopt(pycurl.URL, url)
@@ -97,6 +88,20 @@ def do_api_call(url):
     curl.perform()
     return b.getvalue()
 
+def read_key_from_file(filename):
+    """ read the application specific key from a file """
+    file = open(filename,'r')
+    key = file.readline()
+    key = key.rstrip()
+    file.close()
+    return key
+
+def read_list_from_file(filename):
+    """ read the list strings from a file """
+    file = open(filename,'r')
+    l = file.readline()
+    file.close()
+    return l
 
 def main():
     p = optparse.OptionParser()

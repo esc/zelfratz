@@ -1,4 +1,4 @@
-import unittest
+import unittest, pickle
 import zelfratz
 
 class test_zelfratz(unittest.TestCase):
@@ -25,7 +25,20 @@ class test_zelfratz(unittest.TestCase):
         result = zelfratz.read_key_from_file('test_labels')
         self.assertEqual(target,result,msg="read_list_from_file failed for labels")
 
+    def test_pasre_xml(self):
+        self.helper_test_parse_xml('pickled_releases',
+                'release_by_label.xml',zelfratz.parse_release_xml)
+        self.helper_test_parse_xml('pickled_tracks',
+                'tracks_by_artist.xml',zelfratz.parse_track_xml)
 
+    def helper_test_parse_xml(self,pickled_stuff,xml_stuff,parse_func):
+        file = open(pickled_stuff)
+        target = pickle.load(file)
+        file.close()
+        file = open(xml_stuff)
+        result = pickle.dumps(parse_func(file.read()))
+        file.close()
+        self.assertEqual(target,result,msg=parse_func.func_name + 'failed')
 
 if __name__ == '__main__':
     unittest.main()

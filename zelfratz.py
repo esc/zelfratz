@@ -161,7 +161,8 @@ def read_list_from_file(filename):
     file.close()
     return l
 
-def main():
+def parse_cmd():
+    """ parse the command line options and load the files """
     p = optparse.OptionParser()
 
     p.add_option('--apikey', '-k',

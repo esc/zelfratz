@@ -226,12 +226,4 @@ def main():
 
 if __name__ ==  "__main__":
     main()
-#    t= track(name,url)
-#    __init__()
-#    url = create_api_request(ARTIST,"pyro")
-#    x = do_api_call(url)
-#    print x
-#    li = parse_track_xml(x)
-#    for l in li:
-#        l.pretty_print()
-#
+

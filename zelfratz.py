@@ -79,7 +79,7 @@ def create_api_request(type,search):
     elif type == LABEL:
         url += "by_label/"
     else:
-        print "create_api_request invoked with incorrect argument:" + TYPE
+        print "create_api_request invoked with incorrect argument:" , type
         sys.exit()
     url += search + "?key=" + key
     return url

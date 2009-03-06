@@ -3,7 +3,7 @@
 
 """ zelfratz is a tool to track artist and label releases on digital-tunes """
 
-import pycurl, xml.dom.minidom, StringIO, optparse
+import pycurl, xml.dom.minidom, StringIO, optparse, os
 
 ARTIST = 0
 LABEL = 1
@@ -80,9 +80,9 @@ def parse_track_xml(track_xml):
     return tracks
 
 def read_cache(filename):
-    if !os.path.isfile(filename)
+    if not os.path.isfile(filename):
         return zdata()
-    else
+    else:
         file = open(filename,'r')
         zd = pickle.loads(pickle.load(filename))
         file.close()

@@ -25,7 +25,7 @@ class test_zelfratz(unittest.TestCase):
         result = zelfratz.read_key_from_file('test_labels')
         self.assertEqual(target,result,msg="read_list_from_file failed for labels")
 
-    def test_pasre_xml(self):
+    def test_parse_xml(self):
         self.helper_test_parse_xml('pickled_releases',
                 'release_by_label.xml',zelfratz.parse_release_xml)
         self.helper_test_parse_xml('pickled_tracks',

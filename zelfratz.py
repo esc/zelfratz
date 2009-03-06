@@ -40,7 +40,38 @@ class zdata():
         self.labels = dict()
         self.entities = [self.artists,self.labels]
 
-def create_api_request(type,search,key):
+    def contains_artist(self,artist):
+        return self.artists.has_key(artist)
+
+    def contains_label(self,label):
+        return self.labels.has_key(label)
+
+    def update_artist(self,artist,releases):
+        self.update(ARTIST,artist,releases)
+
+    def update_label(self,label,releases):
+        self.update(LABEL,label,releases)
+
+    def update(self,type,entity,releases):
+        if self.entities[type].has_key(entity):
+            rel_set = self.entities[type][entity]
+            for r in releases:
+                rel_set.add(r)
+        else:
+            self.entities[type][entity] = set(releases)
+
+def print_entity_releases(type,entity_releases):
+    if type == ARTIST:
+        descriptor = "by artist: "
+    else:
+        descriptor = "on label:"
+    for i in entity_releases.keys():
+        print '####################'
+        print "releases" , descriptor, i
+        for r in entity_releases[i]:
+            r.pretty_print()
+
+def create_api_request(type,search):
     """ create a digital-tunes api request as a string """
     url = 'http://api.digital-tunes.net/releases/'
     if type == ARTIST:

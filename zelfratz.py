@@ -5,8 +5,8 @@
 
 import pycurl, xml.dom.minidom, StringIO, optparse
 
-ARTIST = 1
-LABEL = 2
+ARTIST = 0
+LABEL = 1
 curl = pycurl.Curl()
 
 class release():
@@ -36,6 +36,7 @@ class zdata():
     def __init__(self):
         self.artists = dict()
         self.labels = dict()
+        self.entities = [self.artists,self.labels]
 
 def create_api_request(type,search,key):
     """ create a digital-tunes api request as a string """

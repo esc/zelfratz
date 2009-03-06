@@ -31,6 +31,12 @@ class track():
         print "track: ", self.name.encode()
         print "url: ", self.url.encode()
 
+class zdata():
+    """ holds all user data for zelfratz """
+    def __init__(self):
+        self.artists = dict()
+        self.labels = dict()
+
 def create_api_request(type,search,key):
     """ create a digital-tunes api request as a string """
     url = 'http://api.digital-tunes.net/releases/'

@@ -126,6 +126,19 @@ def write_cache(zd,filename):
     pickle.dump(pickle.dumps(zd),filename)
     file.close()
 
+def get_artist_releases(artist):
+    """ get releases for an artist from digital tunes """
+    return __get_entity_releases(ARTIST,artist)
+
+def get_label_releases(label):
+    """ get releases for a label from digital tunes """
+    return __get_entity_releases(LABEL,label)
+
+def __get_entity_releases(type, entity):
+    ur = create_api_request(type,entity)
+    xm = do_api_call(ur)
+    return set(parse_release_xml(xm))
+
 def do_api_call(url):
     """ do the api call to digital-tunes and return the xml """
     curl.setopt(pycurl.URL, url)

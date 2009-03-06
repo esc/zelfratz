@@ -1,0 +1,408 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<releases>
+  <release>
+    <name>Ethanol / Ethanol (Pyro Remix)</name>
+    <url>http://www.digital-tunes.net/releases/ethanol___ethanol__pyro_remix_</url>
+    <internal-name>ethanol___ethanol__pyro_remix_</internal-name>
+    <internal-id>155613</internal-id>
+    <release-date>2009-01-19</release-date>
+    <live-date>2009-01-19</live-date>
+    <type>SINGLE</type>
+    <cat-num>DV007</cat-num>
+    <artwork-thumb>http://images.digital-tunes.net/releases/ethanol___ethanol__pyro_remix_/thumbnail.jpg</artwork-thumb>
+    <artwork-full>http://images.digital-tunes.net/releases/ethanol___ethanol__pyro_remix_/full_size.jpg</artwork-full>
+    <price-point>standard</price-point>
+    <eu-price>3.00</eu-price>
+    <non-eu-price>2.46</non-eu-price>
+    <mp3-only>false</mp3-only>
+    <label>
+      <name>Digital Venom</name>
+      <internal-name>digital_venom</internal-name>
+      <url>http://www.digital-tunes.net/labels/digital_venom</url>
+      <external-url>http://venominc.com</external-url>
+      <logo>http://images.digital-tunes.net/labels/digital-venom.jpg</logo>
+    </label>
+    <upc></upc>
+    <artists>
+      <artist internal-name="eiton">Eiton</artist>
+      <artist internal-name="pyro">Pyro</artist>
+    </artists>
+    <genres>
+      <genre internal-name="drum_and_bass">Drum and Bass</genre>
+    </genres>
+    <tracks>
+      <track>
+        <name>eiton - ethanol</name>
+        <number>1</number>
+        <mp3-clip>http://audio.digital-tunes.net/clips/ethanol___ethanol__pyro_remix_/01_eiton---ethanol.mp3</mp3-clip>
+        <length>444</length>
+        <isrc></isrc>
+        <internal-id>163121</internal-id>
+        <eu-price>1.50</eu-price>
+        <non-eu-price>1.23</non-eu-price>
+        <formats>
+          <format bitrate="320">mp3</format>
+          <format>flac</format>
+          <format>wav</format>
+        </formats>
+        <artists>
+        </artists>
+      </track>
+      <track>
+        <name>eiton - ethanol (pyro rmx)</name>
+        <number>2</number>
+        <mp3-clip>http://audio.digital-tunes.net/clips/ethanol___ethanol__pyro_remix_/02_eiton---ethanol--pyro-rmx-.mp3</mp3-clip>
+        <length>388</length>
+        <isrc></isrc>
+        <internal-id>163122</internal-id>
+        <eu-price>1.50</eu-price>
+        <non-eu-price>1.23</non-eu-price>
+        <formats>
+          <format bitrate="320">mp3</format>
+          <format>flac</format>
+          <format>wav</format>
+        </formats>
+        <artists>
+        </artists>
+      </track>
+    </tracks>
+  </release>
+  <release>
+    <name>Starogardzka EP</name>
+    <url>http://www.digital-tunes.net/releases/starogardzka_ep</url>
+    <internal-name>starogardzka_ep</internal-name>
+    <internal-id>150347</internal-id>
+    <release-date>2008-11-11</release-date>
+    <live-date>2008-11-12</live-date>
+    <type>EP</type>
+    <cat-num>DV006EP</cat-num>
+    <artwork-thumb>http://images.digital-tunes.net/releases/starogardzka_ep/thumbnail.jpg</artwork-thumb>
+    <artwork-full>http://images.digital-tunes.net/releases/starogardzka_ep/full_size.jpg</artwork-full>
+    <price-point>standard</price-point>
+    <eu-price>4.50</eu-price>
+    <non-eu-price>3.69</non-eu-price>
+    <mp3-only>false</mp3-only>
+    <label>
+      <name>Digital Venom</name>
+      <internal-name>digital_venom</internal-name>
+      <url>http://www.digital-tunes.net/labels/digital_venom</url>
+      <external-url>http://venominc.com</external-url>
+      <logo>http://images.digital-tunes.net/labels/digital-venom.jpg</logo>
+    </label>
+    <upc></upc>
+    <artists>
+      <artist internal-name="pylon">Pylon</artist>
+      <artist internal-name="pyro">Pyro</artist>
+    </artists>
+    <genres>
+      <genre internal-name="experimental_electronica">Experimental/Electronica</genre>
+      <genre internal-name="drum_and_bass">Drum and Bass</genre>
+    </genres>
+    <tracks>
+      <track>
+        <name>pylon &amp; pyro - auror</name>
+        <number>1</number>
+        <mp3-clip>http://audio.digital-tunes.net/clips/starogardzka_ep/01_pylon---pyro---auror.mp3</mp3-clip>
+        <length>368</length>
+        <isrc></isrc>
+        <internal-id>142368</internal-id>
+        <eu-price>1.50</eu-price>
+        <non-eu-price>1.23</non-eu-price>
+        <formats>
+          <format bitrate="320">mp3</format>
+          <format>flac</format>
+          <format>wav</format>
+        </formats>
+        <artists>
+        </artists>
+      </track>
+      <track>
+        <name>pylon - teslan</name>
+        <number>2</number>
+        <mp3-clip>http://audio.digital-tunes.net/clips/starogardzka_ep/02_pylon---teslan.mp3</mp3-clip>
+        <length>392</length>
+        <isrc></isrc>
+        <internal-id>142308</internal-id>
+        <eu-price>1.50</eu-price>
+        <non-eu-price>1.23</non-eu-price>
+        <formats>
+          <format bitrate="320">mp3</format>
+          <format>flac</format>
+          <format>wav</format>
+        </formats>
+        <artists>
+        </artists>
+      </track>
+      <track>
+        <name>pylon - central dogma</name>
+        <number>3</number>
+        <mp3-clip>http://audio.digital-tunes.net/clips/starogardzka_ep/03_pylon---central-dogma.mp3</mp3-clip>
+        <length>363</length>
+        <isrc></isrc>
+        <internal-id>142312</internal-id>
+        <eu-price>1.50</eu-price>
+        <non-eu-price>1.23</non-eu-price>
+        <formats>
+          <format bitrate="320">mp3</format>
+          <format>flac</format>
+          <format>wav</format>
+        </formats>
+        <artists>
+        </artists>
+      </track>
+    </tracks>
+  </release>
+  <release>
+    <name>Pyro + Mundane - FFWD [T-FILE002]</name>
+    <url>http://www.digital-tunes.net/releases/pyro___mundane___ffwd__t_file002_</url>
+    <internal-name>pyro___mundane___ffwd__t_file002_</internal-name>
+    <internal-id>136798</internal-id>
+    <release-date>2008-04-20</release-date>
+    <live-date>2008-04-21</live-date>
+    <type>SINGLE</type>
+    <cat-num>TFILE002</cat-num>
+    <artwork-thumb>http://images.digital-tunes.net/releases/pyro___mundane___ffwd__t_file002_/thumbnail.jpg</artwork-thumb>
+    <artwork-full>http://images.digital-tunes.net/releases/pyro___mundane___ffwd__t_file002_/full_size.jpg</artwork-full>
+    <price-point>standard</price-point>
+    <eu-price>1.50</eu-price>
+    <non-eu-price>1.23</non-eu-price>
+    <mp3-only>false</mp3-only>
+    <label>
+      <name>Tilt</name>
+      <internal-name>tilt</internal-name>
+      <url>http://www.digital-tunes.net/labels/tilt</url>
+      <external-url>http://www.tilt-recordings.com</external-url>
+      <logo>http://images.digital-tunes.net/labels/tilt.jpg</logo>
+    </label>
+    <upc></upc>
+    <artists>
+      <artist internal-name="pyro___mundane">Pyro + Mundane</artist>
+    </artists>
+    <genres>
+      <genre internal-name="drum_and_bass">Drum and Bass</genre>
+    </genres>
+    <tracks>
+      <track>
+        <name>FFWD</name>
+        <number>1</number>
+        <mp3-clip>http://audio.digital-tunes.net/clips/pyro___mundane___ffwd__t_file002_/01_FFWD.mp3</mp3-clip>
+        <length>400</length>
+        <isrc></isrc>
+        <internal-id>95819</internal-id>
+        <eu-price>1.50</eu-price>
+        <non-eu-price>1.23</non-eu-price>
+        <formats>
+          <format bitrate="320">mp3</format>
+          <format>flac</format>
+          <format>wav</format>
+        </formats>
+        <artists>
+          <artist internal-name="pyro___mundane">Pyro + Mundane</artist>
+        </artists>
+      </track>
+    </tracks>
+  </release>
+  <release>
+    <name>Speed Of Thought / Innerfire</name>
+    <url>http://www.digital-tunes.net/releases/speed_of_thought___innerfire</url>
+    <internal-name>speed_of_thought___innerfire</internal-name>
+    <internal-id>137087</internal-id>
+    <release-date>2008-04-14</release-date>
+    <live-date>2008-04-08</live-date>
+    <type>SINGLE</type>
+    <cat-num>FLATLINEDG007</cat-num>
+    <artwork-thumb>http://images.digital-tunes.net/releases/speed_of_thought___innerfire/thumbnail.jpg</artwork-thumb>
+    <artwork-full>http://images.digital-tunes.net/releases/speed_of_thought___innerfire/full_size.jpg</artwork-full>
+    <price-point>standard</price-point>
+    <eu-price>3.00</eu-price>
+    <non-eu-price>2.46</non-eu-price>
+    <mp3-only>false</mp3-only>
+    <label>
+      <name>Flatline</name>
+      <internal-name>flatline</internal-name>
+      <url>http://www.digital-tunes.net/labels/flatline</url>
+      <external-url>http://www.nu-urbanmusic.co.uk</external-url>
+      <logo>http://images.digital-tunes.net/labels/flatline.jpg</logo>
+    </label>
+    <upc>5060055995053</upc>
+    <artists>
+      <artist internal-name="pyro">Pyro</artist>
+    </artists>
+    <genres>
+      <genre internal-name="drum_and_bass">Drum and Bass</genre>
+    </genres>
+    <tracks>
+      <track>
+        <name>Speed Of Thought</name>
+        <number>1</number>
+        <mp3-clip>http://audio.digital-tunes.net/clips/speed_of_thought___innerfire/01_Speed-Of-Thought.mp3</mp3-clip>
+        <length>410</length>
+        <isrc>GBQZQ0701037</isrc>
+        <internal-id>96007</internal-id>
+        <eu-price>1.50</eu-price>
+        <non-eu-price>1.23</non-eu-price>
+        <formats>
+          <format bitrate="320">mp3</format>
+          <format>flac</format>
+          <format>wav</format>
+        </formats>
+        <artists>
+          <artist internal-name="pyro">Pyro</artist>
+        </artists>
+      </track>
+      <track>
+        <name>Innerfire</name>
+        <number>2</number>
+        <mp3-clip>http://audio.digital-tunes.net/clips/speed_of_thought___innerfire/02_Innerfire.mp3</mp3-clip>
+        <length>417</length>
+        <isrc>GBQZQ0701038</isrc>
+        <internal-id>96008</internal-id>
+        <eu-price>1.50</eu-price>
+        <non-eu-price>1.23</non-eu-price>
+        <formats>
+          <format bitrate="320">mp3</format>
+          <format>flac</format>
+          <format>wav</format>
+        </formats>
+        <artists>
+          <artist internal-name="pyro">Pyro</artist>
+        </artists>
+      </track>
+    </tracks>
+  </release>
+  <release>
+    <name>Vision 2006 / The Happening</name>
+    <url>http://www.digital-tunes.net/releases/vision_2006___the_happening</url>
+    <internal-name>vision_2006___the_happening</internal-name>
+    <internal-id>119346</internal-id>
+    <release-date>2007-06-16</release-date>
+    <live-date>2007-06-17</live-date>
+    <type>SINGLE</type>
+    <cat-num>TILT005</cat-num>
+    <artwork-thumb>http://images.digital-tunes.net/releases/vision_2006___the_happening/thumbnail.jpg</artwork-thumb>
+    <artwork-full>http://images.digital-tunes.net/releases/vision_2006___the_happening/full_size.jpg</artwork-full>
+    <price-point>standard</price-point>
+    <eu-price>3.00</eu-price>
+    <non-eu-price>2.46</non-eu-price>
+    <mp3-only>false</mp3-only>
+    <label>
+      <name>Tilt</name>
+      <internal-name>tilt</internal-name>
+      <url>http://www.digital-tunes.net/labels/tilt</url>
+      <external-url>http://www.tilt-recordings.com</external-url>
+      <logo>http://images.digital-tunes.net/labels/tilt.jpg</logo>
+    </label>
+    <upc></upc>
+    <artists>
+      <artist internal-name="budoka">Budoka</artist>
+      <artist internal-name="pyro___jesta">Pyro + Jesta</artist>
+    </artists>
+    <genres>
+      <genre internal-name="drum_and_bass">Drum and Bass</genre>
+    </genres>
+    <tracks>
+      <track>
+        <name>Vision 2006</name>
+        <number>1</number>
+        <mp3-clip>http://audio.digital-tunes.net/clips/vision_2006___the_happening/01_Vision-2006.mp3</mp3-clip>
+        <length>417</length>
+        <isrc></isrc>
+        <internal-id>37724</internal-id>
+        <eu-price>1.50</eu-price>
+        <non-eu-price>1.23</non-eu-price>
+        <formats>
+          <format bitrate="320">mp3</format>
+          <format>flac</format>
+          <format>wav</format>
+        </formats>
+        <artists>
+          <artist internal-name="pyro___jesta">Pyro + Jesta</artist>
+        </artists>
+      </track>
+      <track>
+        <name>The Happening</name>
+        <number>2</number>
+        <mp3-clip>http://audio.digital-tunes.net/clips/vision_2006___the_happening/02_The-Happening.mp3</mp3-clip>
+        <length>380</length>
+        <isrc></isrc>
+        <internal-id>37725</internal-id>
+        <eu-price>1.50</eu-price>
+        <non-eu-price>1.23</non-eu-price>
+        <formats>
+          <format bitrate="320">mp3</format>
+          <format>flac</format>
+          <format>wav</format>
+        </formats>
+        <artists>
+          <artist internal-name="budoka">Budoka</artist>
+        </artists>
+      </track>
+    </tracks>
+  </release>
+  <release>
+    <name>m-Atome010</name>
+    <url>http://www.digital-tunes.net/releases/m_atome010</url>
+    <internal-name>m_atome010</internal-name>
+    <internal-id>117178</internal-id>
+    <release-date>2006-10-01</release-date>
+    <live-date>2006-12-13</live-date>
+    <type>SINGLE</type>
+    <cat-num>MAT010</cat-num>
+    <artwork-thumb>http://images.digital-tunes.net/releases/m_atome010/thumbnail.jpg</artwork-thumb>
+    <artwork-full>http://images.digital-tunes.net/releases/m_atome010/full_size.jpg</artwork-full>
+    <price-point>standard</price-point>
+    <eu-price>3.00</eu-price>
+    <non-eu-price>2.46</non-eu-price>
+    <mp3-only>false</mp3-only>
+    <label>
+      <name>m-Atome recordings</name>
+      <internal-name>m_atome_recordings</internal-name>
+      <url>http://www.digital-tunes.net/labels/m_atome_recordings</url>
+      <external-url>http://www.m-atome-recordings.com</external-url>
+      <logo>http://images.digital-tunes.net/labels/m-atome-recordings.jpg</logo>
+    </label>
+    <upc></upc>
+    <artists>
+      <artist internal-name="pyro___ayubi">Pyro &amp; Ayubi</artist>
+    </artists>
+    <genres>
+      <genre internal-name="drum_and_bass">Drum and Bass</genre>
+    </genres>
+    <tracks>
+      <track>
+        <name>Pyro - Netrunnerz</name>
+        <number>1</number>
+        <mp3-clip>http://audio.digital-tunes.net/clips/m_atome010/01_Pyro---Netrunnerz.mp3</mp3-clip>
+        <length>450</length>
+        <isrc></isrc>
+        <internal-id>28029</internal-id>
+        <eu-price>1.50</eu-price>
+        <non-eu-price>1.23</non-eu-price>
+        <formats>
+          <format bitrate="320">mp3</format>
+          <format>flac</format>
+          <format>wav</format>
+        </formats>
+        <artists>
+        </artists>
+      </track>
+      <track>
+        <name>Pyro &amp; Ayubi - Chinese vampires</name>
+        <number>2</number>
+        <mp3-clip>http://audio.digital-tunes.net/clips/m_atome010/02_Pyro---Ayubi---Chinese-vampires.mp3</mp3-clip>
+        <length>427</length>
+        <isrc></isrc>
+        <internal-id>28030</internal-id>
+        <eu-price>1.50</eu-price>
+        <non-eu-price>1.23</non-eu-price>
+        <formats>
+          <format bitrate="320">mp3</format>
+          <format>flac</format>
+          <format>wav</format>
+        </formats>
+        <artists>
+        </artists>
+      </track>
+    </tracks>
+  </release>
+</releases>

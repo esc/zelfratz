@@ -40,6 +40,12 @@ class test_zelfratz(unittest.TestCase):
         file.close()
         self.assertEqual(target,result,msg=parse_func.func_name + 'failed')
 
+    def test_zdata(self):
+        pass
+
+    def test_check_updates(self):
+        pass
+
 if __name__ == '__main__':
     unittest.main()
 

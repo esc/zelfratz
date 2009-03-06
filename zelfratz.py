@@ -78,6 +78,20 @@ def parse_track_xml(track_xml):
         tracks.append(track(name,u))
     return tracks
 
+def read_cache(filename):
+    if !os.path.isfile(filename)
+        return zdata()
+    else
+        file = open(filename,'r')
+        zd = pickle.loads(pickle.load(filename))
+        file.close()
+        return zd
+
+def write_cache(zd,filename):
+    file.open(filename,'w')
+    pickle.dump(pickle.dumpszd(),filename)
+    file.close()
+
 def do_api_call(url):
     """ do the api call to digital-tunes and return the xml """
     curl.setopt(pycurl.URL, url)
@@ -125,10 +139,10 @@ def main():
 
     options, arguments = p.parse_args()
 
-    global key
     key = read_key_from_file(options.apikey)
     artists = read_list_from_file(options.artists)
     labels = read_list_from_file(options.labels)
+    cache = read_cache()
 
 if __name__ ==  "__main__":
     main()

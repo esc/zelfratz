@@ -8,6 +8,8 @@ import pycurl, xml.dom.minidom, StringIO, optparse, os
 ARTIST = 0
 LABEL = 1
 curl = pycurl.Curl()
+key = None
+cache = None
 
 class release():
     """ holds really basic information about a release """

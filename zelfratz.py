@@ -123,7 +123,7 @@ def read_cache(filename):
 
 def write_cache(zd,filename):
     file.open(filename,'w')
-    pickle.dump(pickle.dumpszd(),filename)
+    pickle.dump(pickle.dumps(zd),filename)
     file.close()
 
 def do_api_call(url):

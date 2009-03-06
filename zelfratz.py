@@ -194,12 +194,12 @@ def parse_cmd():
     return (key,artists,labels,cache)
 
 def check_updates_artists(artists):
-    return __check_updates(ARTIST,artists)
+    return check_updates(ARTIST,artists)
 
 def check_updates_labels(labels):
-    return __check_updates(LABEL,labels)
+    return check_updates(LABEL,labels)
 
-def __check_updates(type,entities):
+def check_updates(type,entities):
     new_releases = dict()
     for e in entities:
         new = __get_entity_releases(type,e)

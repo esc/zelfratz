@@ -34,7 +34,16 @@ class track():
         print "url: ", self.url.encode()
 
 class zdata():
-    """ holds all user data for zelfratz """
+    """ holds all user data for zelfratz
+
+        This class holds all knowen artists and labels, and their respective
+        releases. This class is what is serialised and stored to disk as cache.
+
+        The information is stored in two dictionaries, one for artists, one for
+        labels, where the keys are the names of the entities(artists or labels),
+        and the values are sets, that contain release instances.
+
+    """
     def __init__(self):
         self.artists = dict()
         self.labels = dict()
@@ -47,12 +56,15 @@ class zdata():
         return self.labels.has_key(label)
 
     def update_artist(self,artist,releases):
+        """ wrapper for update """
         self.update(ARTIST,artist,releases)
 
     def update_label(self,label,releases):
+        """ wrapper for update """
         self.update(LABEL,label,releases)
 
     def update(self,type,entity,releases):
+        """ if entity exists, append releases, else add entity and releases """
         if self.entities[type].has_key(entity):
             rel_set = self.entities[type][entity]
             for r in releases:
@@ -61,6 +73,7 @@ class zdata():
             self.entities[type][entity] = set(releases)
 
 def print_entity_releases(type,entity_releases):
+    """ pretty print a dictionary that maps strings to sets of releases """
     if type == ARTIST:
         descriptor = "by artist: "
     else:
@@ -113,6 +126,7 @@ def parse_track_xml(track_xml):
     return tracks
 
 def read_cache(filename):
+    """ read zdata instance from filesystem, if file doesn't exist, return new"""
     if not os.path.isfile(filename):
         return zdata()
     else:
@@ -122,19 +136,21 @@ def read_cache(filename):
         return zd
 
 def write_cache(zd,filename):
+    """ write zdata instance to filesystem """
     file.open(filename,'w')
     pickle.dump(pickle.dumps(zd),filename)
     file.close()
 
 def get_artist_releases(artist):
-    """ get releases for an artist from digital tunes """
+    """ wrapper for __get_entity_releases"""
     return __get_entity_releases(ARTIST,artist)
 
 def get_label_releases(label):
-    """ get releases for a label from digital tunes """
+    """ wrapper for __get_entity_releases"""
     return __get_entity_releases(LABEL,label)
 
 def __get_entity_releases(type, entity):
+    """" wrapper: create api request, execute, and parse resulting xml """
     ur = create_api_request(type,entity)
     xm = do_api_call(ur)
     return set(parse_release_xml(xm))

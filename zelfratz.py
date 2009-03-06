@@ -190,7 +190,39 @@ def parse_cmd():
     key = read_key_from_file(options.apikey)
     artists = read_list_from_file(options.artists)
     labels = read_list_from_file(options.labels)
-    cache = read_cache()
+    cache = read_cache(options.cache)
+    return (key,artists,labels,cache)
+
+def check_updates_artists(artists):
+    return __check_updates(ARTIST,artists)
+
+def check_updates_labels(labels):
+    return __check_updates(LABEL,labels)
+
+def __check_updates(type,entities):
+    new_releases = dict()
+    for e in entities:
+        new = __get_entity_releases(type,e)
+        if cache.entities[type].has_key(e):
+            old = cache.entities[type][e]
+            diff = new.difference(old)
+            if len(diff) > 0:
+                new_releases[e] = diff
+                cache.update(type,e,diff)
+        else:
+            new_releases[e] = new
+            cache.update(type,e,new)
+    return new_releases
+
+def main():
+    global key, cache
+    key,artists,labels,cache = parse_cmd()
+    new_rel_artists = check_updates_artists(artists)
+    new_rel_labels = check_updates_labels(labels)
+    print "The following artists have released new material:"
+    print_entity_releases(ARTIST, new_rel_artists)
+    print "The following labels have released new material:"
+    print_entity_releases(LABEL, new_rel_labels)
 
 if __name__ ==  "__main__":
     main()

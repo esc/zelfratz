@@ -137,8 +137,9 @@ def read_cache(filename):
 
 def write_cache(zd,filename):
     """ write zdata instance to filesystem """
-    file.open(filename,'w')
-    pickle.dump(pickle.dumps(zd),filename)
+    file = open(filename,'w')
+    pickle.dump(pickle.dumps(zd),file)
+    file.flush()
     file.close()
 
 def get_artist_releases(artist):

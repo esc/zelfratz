@@ -235,12 +235,31 @@ def parse_cmd():
     return (key,artists,labels,cache)
 
 def check_updates_artists(artists):
+    """ wrapper for check_updates """
     return check_updates(ARTIST,artists)
 
 def check_updates_labels(labels):
+    """ wrapper for check_updates """
     return check_updates(LABEL,labels)
 
 def check_updates(type,entities):
+    """ check for new releases
+
+        This function will do the following: for each entitiy in a list of
+        entities, connect to digital-tunes and get a list of releases. Then
+        compare this list to whats in the local cache. If there are new releases
+        for this entity add them to the cache, and return them. If this entity
+        wasn't in the cache at all, add all releases to the cache and return. If
+        all the releases are known return nothing for this entity.
+
+        arguments:
+        type        - entity type constant
+        entities    - a list of entities
+
+        returns:
+        a dictionary mapping names of entities to sets of release instances,
+
+    """
     new_releases = dict()
     for e in entities:
         new = get_entity_releases(type,e)

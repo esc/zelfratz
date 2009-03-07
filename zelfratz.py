@@ -47,6 +47,8 @@ class track():
     def pretty_print(self):
         print "track: ", self.name.encode()
         print "url: ", self.url.encode()
+    def __cmp__(self,other):
+        return cmp((self.name,self.url),(other.name,other.url))
 
 class zdata():
     """ holds all user data for zelfratz

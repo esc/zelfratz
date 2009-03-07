@@ -45,7 +45,30 @@ class test_zelfratz(unittest.TestCase):
         pass
 
     def test_check_updates(self):
-        pass
+        # override to avoid downloading from digital tunes
+        zelfratz.get_entity_releases = zelfratz_get_entity_releases_OVERRIDE
+        zelfratz.cache = zelfratz.zdata()
+        zelfratz.check_updates_artists(['pyro'])
+        zelfratz.check_updates_labels(['digital_venom'])
+
+        file = open('test_cache')
+        target = pickle.loads(pickle.load(file))
+        file.close()
+        result = zelfratz.cache
+        self.assertEqual(target,result,msg="test_check_updates failed")
+
+
+
+def zelfratz_get_entity_releases_OVERRIDE(type, entity):
+    print "zelfratz_get_entity_releases_OVERRIDE successful"
+    file = None
+    if type == zelfratz.LABEL:
+        file = open('release_by_label.xml')
+    else:
+        file = open('releases_by_artist.xml')
+    s = set(zelfratz.parse_release_xml(file.read()))
+    file.close()
+    return s
 
 if __name__ == '__main__':
     unittest.main()

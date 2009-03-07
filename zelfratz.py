@@ -128,6 +128,14 @@ def create_api_request(type,search):
     url += search + "?key=" + key
     return url
 
+def do_api_call(url):
+    """ do the api call to digital-tunes and return the xml """
+    curl.setopt(pycurl.URL, url)
+    b = StringIO.StringIO()
+    curl.setopt(pycurl.WRITEFUNCTION, b.write)
+    curl.perform()
+    return b.getvalue()
+
 def parse_release_xml(release_xml):
     """ parse xml returned by a 'release' query into list of release instances """
     x = xml.dom.minidom.parseString(release_xml)
@@ -156,6 +164,34 @@ def parse_track_xml(track_xml):
         tracks.append(track(name,u))
     return tracks
 
+def get_artist_releases(artist):
+    """ wrapper for get_entity_releases"""
+    return get_entity_releases(ARTIST,artist)
+
+def get_label_releases(label):
+    """ wrapper for get_entity_releases"""
+    return get_entity_releases(LABEL,label)
+
+def get_entity_releases(type, entity):
+    """" wrapper: create api request, execute, and parse resulting xml """
+    ur = create_api_request(type,entity)
+    xm = do_api_call(ur)
+    return set(parse_release_xml(xm))
+
+def read_key_from_file(filename):
+    """ read the application specific key from a file """
+    file = open(filename,'r')
+    key = file.readline().rstrip()
+    file.close()
+    return key
+
+def read_list_from_file(filename):
+    """ read the list strings from a file """
+    file = open(filename,'r')
+    l = [s.rstrip() for s in file.readlines()]
+    file.close()
+    return l
+
 def read_cache(filename):
     """ read zdata instance from filesystem, if file doesn't exist, return new"""
     if not os.path.isfile(filename):
@@ -172,74 +208,6 @@ def write_cache(zd,filename):
     pickle.dump(pickle.dumps(zd),file)
     file.flush()
     file.close()
-
-def get_artist_releases(artist):
-    """ wrapper for get_entity_releases"""
-    return get_entity_releases(ARTIST,artist)
-
-def get_label_releases(label):
-    """ wrapper for get_entity_releases"""
-    return get_entity_releases(LABEL,label)
-
-def get_entity_releases(type, entity):
-    """" wrapper: create api request, execute, and parse resulting xml """
-    ur = create_api_request(type,entity)
-    xm = do_api_call(ur)
-    return set(parse_release_xml(xm))
-
-def do_api_call(url):
-    """ do the api call to digital-tunes and return the xml """
-    curl.setopt(pycurl.URL, url)
-    b = StringIO.StringIO()
-    curl.setopt(pycurl.WRITEFUNCTION, b.write)
-    curl.perform()
-    return b.getvalue()
-
-def read_key_from_file(filename):
-    """ read the application specific key from a file """
-    file = open(filename,'r')
-    key = file.readline().rstrip()
-    file.close()
-    return key
-
-def read_list_from_file(filename):
-    """ read the list strings from a file """
-    file = open(filename,'r')
-    l = [s.rstrip() for s in file.readlines()]
-    file.close()
-    return l
-
-def parse_cmd():
-    """ parse the command line options and load the files """
-    p = optparse.OptionParser()
-
-    p.add_option('--apikey', '-k',
-            default="~/.zelfratz/api-key",
-            help='file that contains the api key',
-            dest='apikey')
-
-    p.add_option('--artists', '-a',
-            default='~/.zelfratz/artists',
-            help='file that contains a list of artists',
-            dest='artists')
-
-    p.add_option('--labels' , '-l',
-            default='~/.zelfratz/labels',
-            help='file that contains a list of labels',
-            dest='labels')
-
-    p.add_option('--cache', '-c',
-            default='~/.zelfratz/cache',
-            help='file to use as cache',
-            dest='cache')
-
-    options, arguments = p.parse_args()
-
-    key = read_key_from_file(options.apikey)
-    artists = read_list_from_file(options.artists)
-    labels = read_list_from_file(options.labels)
-    cache = read_cache(options.cache)
-    return (key,artists,labels,cache)
 
 def check_updates_artists(artists):
     """ wrapper for check_updates """
@@ -280,6 +248,38 @@ def check_updates(type,entities):
             new_releases[e] = new
             cache.update(type,e,new)
     return new_releases
+
+def parse_cmd():
+    """ parse the command line options and load the files """
+    p = optparse.OptionParser()
+
+    p.add_option('--apikey', '-k',
+            default="~/.zelfratz/api-key",
+            help='file that contains the api key',
+            dest='apikey')
+
+    p.add_option('--artists', '-a',
+            default='~/.zelfratz/artists',
+            help='file that contains a list of artists',
+            dest='artists')
+
+    p.add_option('--labels' , '-l',
+            default='~/.zelfratz/labels',
+            help='file that contains a list of labels',
+            dest='labels')
+
+    p.add_option('--cache', '-c',
+            default='~/.zelfratz/cache',
+            help='file to use as cache',
+            dest='cache')
+
+    options, arguments = p.parse_args()
+
+    key = read_key_from_file(options.apikey)
+    artists = read_list_from_file(options.artists)
+    labels = read_list_from_file(options.labels)
+    cache = read_cache(options.cache)
+    return (key,artists,labels,cache)
 
 def main():
     global key, cache

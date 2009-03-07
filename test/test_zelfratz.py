@@ -33,10 +33,10 @@ class test_zelfratz(unittest.TestCase):
                 'tracks_by_artist.xml',zelfratz.parse_track_xml)
 
     def helper_test_parse_xml(self,pickled_stuff,xml_stuff,parse_func):
-        file = open(pickled_stuff)
+        file = open(pickled_stuff,'r')
         target = pickle.loads(pickle.load(file))
         file.close()
-        file = open(xml_stuff)
+        file = open(xml_stuff,'r')
         result = parse_func(file.read())
         file.close()
         self.assertEqual(target,result,msg=parse_func.func_name + 'failed')
@@ -51,7 +51,7 @@ class test_zelfratz(unittest.TestCase):
         zelfratz.check_updates_artists(['pyro'])
         zelfratz.check_updates_labels(['digital_venom'])
 
-        file = open('test_cache')
+        file = open('test_cache','r')
         target = pickle.loads(pickle.load(file))
         file.close()
         result = zelfratz.cache
@@ -63,9 +63,9 @@ def zelfratz_get_entity_releases_OVERRIDE(type, entity):
     print "zelfratz_get_entity_releases_OVERRIDE successful"
     file = None
     if type == zelfratz.LABEL:
-        file = open('releases_by_label.xml')
+        file = open('releases_by_label.xml','r')
     else:
-        file = open('releases_by_artist.xml')
+        file = open('releases_by_artist.xml','r')
     s = set(zelfratz.parse_release_xml(file.read()))
     file.close()
     return s

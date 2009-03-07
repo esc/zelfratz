@@ -143,14 +143,14 @@ def write_cache(zd,filename):
     file.close()
 
 def get_artist_releases(artist):
-    """ wrapper for __get_entity_releases"""
-    return __get_entity_releases(ARTIST,artist)
+    """ wrapper for get_entity_releases"""
+    return get_entity_releases(ARTIST,artist)
 
 def get_label_releases(label):
-    """ wrapper for __get_entity_releases"""
-    return __get_entity_releases(LABEL,label)
+    """ wrapper for get_entity_releases"""
+    return get_entity_releases(LABEL,label)
 
-def __get_entity_releases(type, entity):
+def get_entity_releases(type, entity):
     """" wrapper: create api request, execute, and parse resulting xml """
     ur = create_api_request(type,entity)
     xm = do_api_call(ur)
@@ -219,7 +219,7 @@ def check_updates_labels(labels):
 def check_updates(type,entities):
     new_releases = dict()
     for e in entities:
-        new = __get_entity_releases(type,e)
+        new = get_entity_releases(type,e)
         if cache.entities[type].has_key(e):
             old = cache.entities[type][e]
             diff = new.difference(old)

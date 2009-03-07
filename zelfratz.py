@@ -18,11 +18,26 @@ class release():
         self.artists = artists
         self.label = label
         self.url = url
+        self.hash = 0
+        self.values = (self.name,self.artists,self.label,self.url)
+
     def pretty_print(self):
         print "release: ", self.name.encode()
         print "by: ", [a.encode() for a in self.artists]
         print "on label: ", self.label.encode()
         print "url: ", self.url.encode()
+
+    def __cmp__(self,other):
+        return cmp(self.values,other.values)
+
+    def __hash__(self):
+        if self.hash == 0:
+            result = 23
+            for v in self.values:
+                if type(v) == str:
+                    result = 37 * result + v.__hash__()
+            self.hash = result
+        return self.hash
 
 class track():
     """ holds really basic information about a track """

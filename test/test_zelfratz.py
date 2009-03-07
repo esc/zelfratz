@@ -4,12 +4,13 @@ import zelfratz
 class test_zelfratz(unittest.TestCase):
 
     def test_create_api_request(self):
+        zelfratz.key = '666'
         target = "http://api.digital-tunes.net/releases/by_artist/pyro?key=666"
-        result = zelfratz.create_api_request(zelfratz.ARTIST,'pyro','666')
+        result = zelfratz.create_api_request(zelfratz.ARTIST,'pyro')
         self.assertEqual(target,result,msg="test_create_api_request failed with ARTIST")
 
         target = "http://api.digital-tunes.net/releases/by_label/digital_venom?key=666"
-        result = zelfratz.create_api_request(zelfratz.LABEL,'digital_venom','666')
+        result = zelfratz.create_api_request(zelfratz.LABEL,'digital_venom')
         self.assertEqual(target,result,msg="test_create_api_request failed with LABEL")
 
     def test_read_funcs(self):

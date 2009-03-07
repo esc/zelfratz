@@ -34,10 +34,10 @@ class test_zelfratz(unittest.TestCase):
 
     def helper_test_parse_xml(self,pickled_stuff,xml_stuff,parse_func):
         file = open(pickled_stuff)
-        target = pickle.load(file)
+        target = pickle.loads(pickle.load(file))
         file.close()
         file = open(xml_stuff)
-        result = pickle.dumps(parse_func(file.read()))
+        result = parse_func(file.read())
         file.close()
         self.assertEqual(target,result,msg=parse_func.func_name + 'failed')
 

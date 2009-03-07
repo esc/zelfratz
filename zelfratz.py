@@ -81,7 +81,14 @@ class zdata():
         self.update(LABEL,label,releases)
 
     def update(self,type,entity,releases):
-        """ if entity exists, append releases, else add entity and releases """
+        """ if entity exists, append releases, else add entity and releases
+
+            arguments:
+            type        - entity type constant
+            entity      - string describing the entity
+            releases    - a set of release instances
+
+        """
         if self.entities[type].has_key(entity):
             rel_set = self.entities[type][entity]
             for r in releases:

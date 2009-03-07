@@ -28,7 +28,7 @@ class test_zelfratz(unittest.TestCase):
 
     def test_parse_xml(self):
         self.helper_test_parse_xml('pickled_releases',
-                'release_by_label.xml',zelfratz.parse_release_xml)
+                'releases_by_label.xml',zelfratz.parse_release_xml)
         self.helper_test_parse_xml('pickled_tracks',
                 'tracks_by_artist.xml',zelfratz.parse_track_xml)
 
@@ -63,7 +63,7 @@ def zelfratz_get_entity_releases_OVERRIDE(type, entity):
     print "zelfratz_get_entity_releases_OVERRIDE successful"
     file = None
     if type == zelfratz.LABEL:
-        file = open('release_by_label.xml')
+        file = open('releases_by_label.xml')
     else:
         file = open('releases_by_artist.xml')
     s = set(zelfratz.parse_release_xml(file.read()))

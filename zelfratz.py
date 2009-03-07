@@ -129,7 +129,7 @@ def create_api_request(type,search):
     return url
 
 def parse_release_xml(release_xml):
-    """ parse xml returned by a 'release' query into list of release obkects """
+    """ parse xml returned by a 'release' query into list of release instances """
     x = xml.dom.minidom.parseString(release_xml)
     releases = list()
     for rel in x.getElementsByTagName('release'):
@@ -146,7 +146,7 @@ def parse_release_xml(release_xml):
     return releases
 
 def parse_track_xml(track_xml):
-    """ parse xml returned by a 'track' query into a list of track objects """
+    """ parse xml returned by a 'track' query into a list of track instances """
     x = xml.dom.minidom.parseString(track_xml)
     tracks = list()
     for tra in x.getElementsByTagName('track'):

@@ -87,7 +87,14 @@ class zdata():
             for r in releases:
                 rel_set.add(r)
         else:
-            self.entities[type][entity] = set(releases)
+            self.entities[type][entity] = releases
+
+    def pretty_print(self):
+        print_entity_releases(ARTIST,self.artists)
+        print_entity_releases(LABEL,self.labels)
+
+    def __cmp__(self,other):
+        return cmp(self.entities, other.entities)
 
 def print_entity_releases(type,entity_releases):
     """ pretty print a dictionary that maps strings to sets of releases """

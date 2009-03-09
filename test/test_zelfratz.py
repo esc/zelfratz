@@ -18,12 +18,12 @@ class test_zelfratz(unittest.TestCase):
         result = zelfratz.read_key_from_file('test_key')
         self.assertEqual(target,result,msg="read_key_from_file_failed")
 
-        target = "pyro"
-        result = zelfratz.read_key_from_file('test_artists')
+        target = ["pyro"]
+        result = zelfratz.read_list_from_file('test_artists')
         self.assertEqual(target,result,msg="read_list_from_file failed for artists")
 
-        target = "digital_venom"
-        result = zelfratz.read_key_from_file('test_labels')
+        target = ["digital_venom"]
+        result = zelfratz.read_list_from_file('test_labels')
         self.assertEqual(target,result,msg="read_list_from_file failed for labels")
 
     def test_parse_xml(self):

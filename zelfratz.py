@@ -173,7 +173,7 @@ def get_label_releases(label):
     return get_entity_releases(LABEL,label)
 
 def get_entity_releases(type, entity):
-    """" wrapper: create api request, execute, and parse resulting xml """
+    """ wrapper: create api request, execute, and parse resulting xml """
     ur = create_api_request(type,entity)
     xm = do_api_call(ur)
     return set(parse_release_xml(xm))

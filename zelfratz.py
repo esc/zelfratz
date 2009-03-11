@@ -62,7 +62,7 @@ class track():
 class zdata():
     """ holds all user data for zelfratz
 
-        This class holds all knowen artists and labels, and their respective
+        This class holds all known artists and labels, and their respective
         releases. This class is what is serialised and stored to disk as cache.
 
         The information is stored in two dictionaries, one for artists, one for
@@ -229,7 +229,7 @@ def check_updates_labels(labels):
 def check_updates(type,entities):
     """ check for new releases
 
-        This function will do the following: for each entitiy in a list of
+        This function will do the following: for each entity in a list of
         entities, connect to digital-tunes and get a list of releases. Then
         compare this list to whats in the local cache. If there are new releases
         for this entity add them to the cache, and return them. If this entity

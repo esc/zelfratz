@@ -11,7 +11,7 @@ import zelfratz
 
 
 def enable_override(func):
-    """ decorator to estimate the timing of methods """
+    """ decorator to override zelfratz.get_entity_releases """
     def wrapper(*arg, **kwargs):
         # override to avoid downloading from digital tunes
         back = zelfratz.get_entity_releases
@@ -94,7 +94,7 @@ class test_zelfratz(unittest.TestCase):
         # this will invoke the OVERRIDE and add stuff in xml to cache
         zelfratz.check_updates_artists([self.pyro])
         zelfratz.check_updates_labels([self.digital_venom])
-        # now comapre the cache to one thats on disk
+        # now comapare the cache to one thats on disk
         target = zelfratz.read_cache('test_cache')
         result = zelfratz.cache
         self.assertEqual(target,result,msg="test_check_updates failed")

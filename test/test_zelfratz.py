@@ -55,10 +55,12 @@ class test_zelfratz(unittest.TestCase):
     def test_check_updates(self):
         # override to avoid downloading from digital tunes
         zelfratz.get_entity_releases = zelfratz_get_entity_releases_OVERRIDE
+        # load an empty cache
         zelfratz.cache = zelfratz.zdata()
+        # this will invoke the OVERRIDE and add stuff in xml to cache
         zelfratz.check_updates_artists(['pyro'])
         zelfratz.check_updates_labels(['digital_venom'])
-
+        # now comapre the cache to one thats on disk
         file = open('test_cache','r')
         target = pickle.loads(pickle.load(file))
         file.close()

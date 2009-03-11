@@ -78,9 +78,7 @@ class test_zelfratz(unittest.TestCase):
                 'tracks_by_artist.xml',zelfratz.parse_track_xml)
 
     def helper_test_parse_xml(self,pickled_stuff,xml_stuff,parse_func):
-        file = open(pickled_stuff,'r')
-        target = pickle.loads(pickle.load(file))
-        file.close()
+        target = unpickle(pickled_stuff)
         file = open(xml_stuff,'r')
         result = parse_func(file.read())
         file.close()

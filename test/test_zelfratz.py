@@ -87,18 +87,15 @@ class test_zelfratz(unittest.TestCase):
     def test_zdata(self):
         pass
 
+    @enable_override
     def test_check_updates(self):
-        # override to avoid downloading from digital tunes
-        zelfratz.get_entity_releases = zelfratz_get_entity_releases_OVERRIDE
-        # load an empty cache
+       # load an empty cache
         zelfratz.cache = zelfratz.zdata()
         # this will invoke the OVERRIDE and add stuff in xml to cache
         zelfratz.check_updates_artists([self.pyro])
         zelfratz.check_updates_labels([self.digital_venom])
         # now comapre the cache to one thats on disk
-        file = open('test_cache','r')
-        target = pickle.loads(pickle.load(file))
-        file.close()
+        target = zelfratz.read_cache('test_cache')
         result = zelfratz.cache
         self.assertEqual(target,result,msg="test_check_updates failed")
 

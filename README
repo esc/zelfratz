@@ -1,13 +1,39 @@
 README for zelfratz
 ===================
 
-Valentin 'esc' Haenel emergencyselfconstruct@gmail.com
-
 intro
-=====
+-----
 
 'zelfratz' is a tool to monitor artists and labels via the digital-tunes api. It
-is written entirely in python and makes use of a a number of libraries
+is written entirely in python. The name was chosen as it was the first word i
+came up with that returned no results on google.
 
+usage
+-----
 
+The way the author uses it, is to have it running on a server, and send email
+about updates once a day.
+
+docs
+----
+
+Docs for the digital tunes api are on:
+http://code.google.com/p/digitaltunesapi/
+
+deps
+----
+
+zelfratz depends on the following additional python libs:
+
+pycurl
+
+authors
+-------
+
+Valentin 'esc' Haenel <emergencyselfconstruct@gmail.com>
+
+copying
+-------
+
+zelfrtz is available under WTF public licence 
 

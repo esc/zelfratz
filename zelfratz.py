@@ -12,7 +12,7 @@
 
 """ zelfratz is a tool to track artist and label releases on digital-tunes """
 
-import pycurl, xml.dom.minidom, StringIO, optparse, os
+import pycurl, xml.dom.minidom, StringIO, optparse, os, pickle
 
 ARTIST = 0
 LABEL = 1
@@ -207,7 +207,7 @@ def read_cache(filename):
         return zdata()
     else:
         file = open(filename,'r')
-        zd = pickle.loads(pickle.load(filename))
+        zd = pickle.loads(pickle.load(file))
         file.close()
         return zd
 

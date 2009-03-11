@@ -44,14 +44,18 @@ def load_xml_from_file(filename):
 
 class test_zelfratz(unittest.TestCase):
 
+    def setUp(self):
+        self.pyro = 'pyro'
+        self.digital_venom = 'digital_venom'
+
     def test_create_api_request(self):
         zelfratz.key = '666'
         target = "http://api.digital-tunes.net/releases/by_artist/pyro?key=666"
-        result = zelfratz.create_api_request(zelfratz.ARTIST,'pyro')
+        result = zelfratz.create_api_request(zelfratz.ARTIST,self.pyro)
         self.assertEqual(target,result,msg="test_create_api_request failed with ARTIST")
 
         target = "http://api.digital-tunes.net/releases/by_label/digital_venom?key=666"
-        result = zelfratz.create_api_request(zelfratz.LABEL,'digital_venom')
+        result = zelfratz.create_api_request(zelfratz.LABEL,self.digital_venom)
         self.assertEqual(target,result,msg="test_create_api_request failed with LABEL")
 
     def test_read_funcs(self):
@@ -59,11 +63,11 @@ class test_zelfratz(unittest.TestCase):
         result = zelfratz.read_key_from_file('test_key')
         self.assertEqual(target,result,msg="read_key_from_file_failed")
 
-        target = ["pyro"]
+        target = [self.pyro]
         result = zelfratz.read_list_from_file('test_artists')
         self.assertEqual(target,result,msg="read_list_from_file failed for artists")
 
-        target = ["digital_venom"]
+        target = [self.digital_venom]
         result = zelfratz.read_list_from_file('test_labels')
         self.assertEqual(target,result,msg="read_list_from_file failed for labels")
 
@@ -91,8 +95,8 @@ class test_zelfratz(unittest.TestCase):
         # load an empty cache
         zelfratz.cache = zelfratz.zdata()
         # this will invoke the OVERRIDE and add stuff in xml to cache
-        zelfratz.check_updates_artists(['pyro'])
-        zelfratz.check_updates_labels(['digital_venom'])
+        zelfratz.check_updates_artists([self.pyro])
+        zelfratz.check_updates_labels([self.digital_venom])
         # now comapre the cache to one thats on disk
         file = open('test_cache','r')
         target = pickle.loads(pickle.load(file))

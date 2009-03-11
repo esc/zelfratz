@@ -1,0 +1,13 @@
+README for zelfratz
+===================
+
+Valentin 'esc' Haenel emergencyselfconstruct@gmail.com
+
+intro
+=====
+
+'zelfratz' is a tool to monitor artists and labels via the digital-tunes api. It
+is written entirely in python and makes use of a a number of libraries
+
+
+

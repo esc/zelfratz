@@ -9,6 +9,39 @@
 import unittest, pickle
 import zelfratz
 
+
+def enable_override(func):
+    """ decorator to estimate the timing of methods """
+    def wrapper(*arg, **kwargs):
+        # override to avoid downloading from digital tunes
+        back = zelfratz.get_entity_releases
+        zelfratz.get_entity_releases = zelfratz_get_entity_releases_OVERRIDE
+        # call function
+        res = func(*arg , **kwargs)
+        # put original back in place
+        zelfratz.get_entity_releases = back
+        return res
+    return wrapper
+
+def zelfratz_get_entity_releases_OVERRIDE(type, entity):
+    print "zelfratz_get_entity_releases_OVERRIDE successful"
+    if type == zelfratz.LABEL:
+        return load_xml_from_file('releases_by_label.xml')
+    else:
+        return load_xml_from_file('releases_by_artist.xml')
+
+def unpickle(filename):
+    file = open(filename,'r')
+    ob = pickle.loads(pickle.load(file))
+    file.close()
+    return ob
+
+def load_xml_from_file(filename):
+    file = open(filename)
+    rel = set(zelfratz.parse_release_xml(file.read()))
+    file.close()
+    return rel
+
 class test_zelfratz(unittest.TestCase):
 
     def test_create_api_request(self):

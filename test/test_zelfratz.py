@@ -99,18 +99,22 @@ class test_zelfratz(unittest.TestCase):
         result = zelfratz.cache
         self.assertEqual(target,result,msg="test_check_updates failed")
 
-
-
-def zelfratz_get_entity_releases_OVERRIDE(type, entity):
-    print "zelfratz_get_entity_releases_OVERRIDE successful"
-    file = None
-    if type == zelfratz.LABEL:
-        file = open('releases_by_label.xml','r')
-    else:
-        file = open('releases_by_artist.xml','r')
-    s = set(zelfratz.parse_release_xml(file.read()))
-    file.close()
-    return s
+    @enable_override
+    def test_difference(self):
+        # load apparently old artist info into cache
+        zelfratz.cache = zelfratz.zdata()
+        rel = load_xml_from_file('old_releases_by_artist.xml')
+        zelfratz.cache.update_artist(self.pyro,rel)
+        # load apparently old label info into cache
+        rel = load_xml_from_file('old_releases_by_label.xml')
+        zelfratz.cache.update_label(self.digital_venom,rel)
+        # now run the update methods and see what the return
+        result = zelfratz.check_updates_artists([self.pyro])
+        target = unpickle('pickled_artist_updates')
+        self.assertEqual(target,result,msg="test_difference failed for artists")
+        result = zelfratz.check_updates_labels([self.digital_venom])
+        target = unpickle('pickled_label_updates')
+        self.assertEqual(target,result,msg="test_difference failed for labels")
 
 if __name__ == '__main__':
     unittest.main()

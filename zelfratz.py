@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 #coding=utf-8
 
-# "zelfratz" is (!C) 2009 Valenin 'esc' Haenel
+# "zelfratz" is (!C) 2009 Valentin 'esc' Haenel
 #
 # This program is free software. It comes without any warranty, to
 # the extent permitted by applicable law. You can redistribute it

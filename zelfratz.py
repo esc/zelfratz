@@ -17,8 +17,14 @@ import pycurl, xml.dom.minidom, StringIO, optparse, os, pickle
 ARTIST = 0
 LABEL = 1
 curl = pycurl.Curl()
-key = None
-cache = None
+conf = None
+
+class configuration():
+    """ holds zelfratz config """
+    def __init__(self, cache_file, cache, key):
+        self.cache_file = cache_file
+        self.cache = cache
+        self.key = key
 
 class release():
     """ holds really basic information about a release """
@@ -134,7 +140,7 @@ def create_api_request(type,search):
     else:
         print "create_api_request invoked with incorrect argument:" , type
         sys.exit()
-    url += search + "?key=" + key
+    url += search + "?key=" + conf.key
     return url
 
 def do_api_call(url):
@@ -247,15 +253,15 @@ def check_updates(type,entities):
     new_releases = dict()
     for e in entities:
         new = get_entity_releases(type,e)
-        if cache.entities[type].has_key(e):
-            old = cache.entities[type][e]
+        if conf.cache.entities[type].has_key(e):
+            old = conf.cache.entities[type][e]
             diff = new.difference(old)
             if len(diff) > 0:
                 new_releases[e] = diff
-                cache.update(type,e,diff)
+                conf.cache.update(type,e,diff)
         else:
             new_releases[e] = new
-            cache.update(type,e,new)
+            conf.cache.update(type,e,new)
     return new_releases
 
 def parse_cmd():
@@ -281,19 +287,21 @@ def parse_cmd():
     p.add_option('--cache', '-c',
             default=home + '~/.zelfratz/cache',
             help='file to use as cache',
-            dest='cache')
+            dest='cache_file')
 
     options, arguments = p.parse_args()
 
     key = read_key_from_file(options.apikey)
     artists = read_list_from_file(options.artists)
     labels = read_list_from_file(options.labels)
-    cache = read_cache(options.cache)
-    return (key,artists,labels,cache)
+    cache = read_cache(options.cache_file)
+
+    conf = configuration(options.cache_file,cache,key)
+    return (conf,artists,labels)
 
 def main():
-    global key, cache
-    key,artists,labels,cache = parse_cmd()
+    global conf
+    conf, artists, labels = parse_cmd()
     new_rel_artists = check_updates_artists(artists)
     new_rel_labels = check_updates_labels(labels)
     print "The following artists have released new material:"

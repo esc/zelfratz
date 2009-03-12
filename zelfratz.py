@@ -261,24 +261,25 @@ def check_updates(type,entities):
 def parse_cmd():
     """ parse the command line options and load the files """
     p = optparse.OptionParser()
+    home = os.environ['HOME']
 
     p.add_option('--apikey', '-k',
-            default="~/.zelfratz/api-key",
+            default=home + "/.zelfratz/api-key",
             help='file that contains the api key',
             dest='apikey')
 
     p.add_option('--artists', '-a',
-            default='~/.zelfratz/artists',
+            default=home +'/.zelfratz/artists',
             help='file that contains a list of artists',
             dest='artists')
 
     p.add_option('--labels' , '-l',
-            default='~/.zelfratz/labels',
+            default=home +'/.zelfratz/labels',
             help='file that contains a list of labels',
             dest='labels')
 
     p.add_option('--cache', '-c',
-            default='~/.zelfratz/cache',
+            default=home + '~/.zelfratz/cache',
             help='file to use as cache',
             dest='cache')
 

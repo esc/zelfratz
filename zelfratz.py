@@ -308,6 +308,7 @@ def main():
     print_entity_releases(ARTIST, new_rel_artists)
     print "The following labels have released new material:"
     print_entity_releases(LABEL, new_rel_labels)
+    write_cache(conf.cache,conf.cache_file)
 
 if __name__ ==  "__main__":
     main()

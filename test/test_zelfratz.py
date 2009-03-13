@@ -11,7 +11,7 @@ import zelfratz
 
 
 def enable_override(func):
-    """ decorator to estimate the timing of methods """
+    """ decorator to override zelfratz.get_entity_releases """
     def wrapper(*arg, **kwargs):
         # override to avoid downloading from digital tunes
         back = zelfratz.get_entity_releases
@@ -49,7 +49,7 @@ class test_zelfratz(unittest.TestCase):
         self.digital_venom = 'digital_venom'
 
     def test_create_api_request(self):
-        zelfratz.key = '666'
+        zelfratz.conf = zelfratz.configuration(None,None,'666')
         target = "http://api.digital-tunes.net/releases/by_artist/pyro?key=666"
         result = zelfratz.create_api_request(zelfratz.ARTIST,self.pyro)
         self.assertEqual(target,result,msg="test_create_api_request failed with ARTIST")
@@ -90,24 +90,24 @@ class test_zelfratz(unittest.TestCase):
     @enable_override
     def test_check_updates(self):
        # load an empty cache
-        zelfratz.cache = zelfratz.zdata()
+        zelfratz.conf = zelfratz.configuration(None,zelfratz.zdata(),None)
         # this will invoke the OVERRIDE and add stuff in xml to cache
         zelfratz.check_updates_artists([self.pyro])
         zelfratz.check_updates_labels([self.digital_venom])
-        # now comapre the cache to one thats on disk
+        # now comapare the cache to one thats on disk
         target = zelfratz.read_cache('test_cache')
-        result = zelfratz.cache
+        result = zelfratz.conf.cache
         self.assertEqual(target,result,msg="test_check_updates failed")
 
     @enable_override
     def test_difference(self):
         # load apparently old artist info into cache
-        zelfratz.cache = zelfratz.zdata()
+        zelfratz.conf = zelfratz.configuration(None,zelfratz.zdata(),None)
         rel = load_xml_from_file('old_releases_by_artist.xml')
-        zelfratz.cache.update_artist(self.pyro,rel)
+        zelfratz.conf.cache.update_artist(self.pyro,rel)
         # load apparently old label info into cache
         rel = load_xml_from_file('old_releases_by_label.xml')
-        zelfratz.cache.update_label(self.digital_venom,rel)
+        zelfratz.conf.cache.update_label(self.digital_venom,rel)
         # now run the update methods and see what the return
         result = zelfratz.check_updates_artists([self.pyro])
         target = unpickle('pickled_artist_updates')

@@ -17,8 +17,14 @@ import pycurl, xml.dom.minidom, StringIO, optparse, os, pickle
 ARTIST = 0
 LABEL = 1
 curl = pycurl.Curl()
-key = None
-cache = None
+conf = None
+
+class configuration():
+    """ holds zelfratz config """
+    def __init__(self, cache_file, cache, key):
+        self.cache_file = cache_file
+        self.cache = cache
+        self.key = key
 
 class release():
     """ holds really basic information about a release """
@@ -62,7 +68,7 @@ class track():
 class zdata():
     """ holds all user data for zelfratz
 
-        This class holds all knowen artists and labels, and their respective
+        This class holds all known artists and labels, and their respective
         releases. This class is what is serialised and stored to disk as cache.
 
         The information is stored in two dictionaries, one for artists, one for
@@ -134,7 +140,7 @@ def create_api_request(type,search):
     else:
         print "create_api_request invoked with incorrect argument:" , type
         sys.exit()
-    url += search + "?key=" + key
+    url += search + "?key=" + conf.key
     return url
 
 def do_api_call(url):
@@ -229,7 +235,7 @@ def check_updates_labels(labels):
 def check_updates(type,entities):
     """ check for new releases
 
-        This function will do the following: for each entitiy in a list of
+        This function will do the following: for each entity in a list of
         entities, connect to digital-tunes and get a list of releases. Then
         compare this list to whats in the local cache. If there are new releases
         for this entity add them to the cache, and return them. If this entity
@@ -247,58 +253,62 @@ def check_updates(type,entities):
     new_releases = dict()
     for e in entities:
         new = get_entity_releases(type,e)
-        if cache.entities[type].has_key(e):
-            old = cache.entities[type][e]
+        if conf.cache.entities[type].has_key(e):
+            old = conf.cache.entities[type][e]
             diff = new.difference(old)
             if len(diff) > 0:
                 new_releases[e] = diff
-                cache.update(type,e,diff)
+                conf.cache.update(type,e,diff)
         else:
             new_releases[e] = new
-            cache.update(type,e,new)
+            conf.cache.update(type,e,new)
     return new_releases
 
 def parse_cmd():
     """ parse the command line options and load the files """
     p = optparse.OptionParser()
+    home = os.environ['HOME']
 
     p.add_option('--apikey', '-k',
-            default="~/.zelfratz/api-key",
+            default=home + "/.zelfratz/api-key",
             help='file that contains the api key',
             dest='apikey')
 
     p.add_option('--artists', '-a',
-            default='~/.zelfratz/artists',
+            default=home +'/.zelfratz/artists',
             help='file that contains a list of artists',
             dest='artists')
 
     p.add_option('--labels' , '-l',
-            default='~/.zelfratz/labels',
+            default=home +'/.zelfratz/labels',
             help='file that contains a list of labels',
             dest='labels')
 
     p.add_option('--cache', '-c',
-            default='~/.zelfratz/cache',
+            default=home + '~/.zelfratz/cache',
             help='file to use as cache',
-            dest='cache')
+            dest='cache_file')
 
     options, arguments = p.parse_args()
 
     key = read_key_from_file(options.apikey)
     artists = read_list_from_file(options.artists)
     labels = read_list_from_file(options.labels)
-    cache = read_cache(options.cache)
-    return (key,artists,labels,cache)
+    cache = read_cache(options.cache_file)
+
+    conf = configuration(options.cache_file,cache,key)
+    return (conf,artists,labels)
 
 def main():
-    global key, cache
-    key,artists,labels,cache = parse_cmd()
+    global conf
+    conf, artists, labels = parse_cmd()
     new_rel_artists = check_updates_artists(artists)
     new_rel_labels = check_updates_labels(labels)
     print "The following artists have released new material:"
     print_entity_releases(ARTIST, new_rel_artists)
     print "The following labels have released new material:"
     print_entity_releases(LABEL, new_rel_labels)
+    write_cache(conf.cache,conf.cache_file)
 
 if __name__ ==  "__main__":
     main()

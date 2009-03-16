@@ -28,13 +28,13 @@ class configuration():
 
 class release():
     """ holds really basic information about a release """
-    def __init__(self, name, artists,label,url):
+    def __init__(self, name, artists, label, url):
         self.name = name
         self.artists = artists
         self.label = label
         self.url = url
         self.hash = 0
-        self.values = (self.name,self.artists,self.label,self.url)
+        self.values = (self.name, self.artists, self.label, self.url)
 
     def pretty_print(self):
         print "release: ", self.name.encode()
@@ -42,8 +42,8 @@ class release():
         print "on label: ", self.label.encode()
         print "url: ", self.url.encode()
 
-    def __cmp__(self,other):
-        return cmp(self.values,other.values)
+    def __cmp__(self, other):
+        return cmp(self.values, other.values)
 
     def __hash__(self):
         if self.hash == 0:
@@ -56,14 +56,14 @@ class release():
 
 class track():
     """ holds really basic information about a track """
-    def __init__(self, name,url):
+    def __init__(self, name, url):
         self.name = name
         self.url = url
     def pretty_print(self):
         print "track: ", self.name.encode()
         print "url: ", self.url.encode()
-    def __cmp__(self,other):
-        return cmp((self.name,self.url),(other.name,other.url))
+    def __cmp__(self, other):
+        return cmp((self.name, self.url), (other.name, other.url))
 
 class zdata():
     """ holds all user data for zelfratz
@@ -79,23 +79,23 @@ class zdata():
     def __init__(self):
         self.artists = dict()
         self.labels = dict()
-        self.entities = [self.artists,self.labels]
+        self.entities = [self.artists, self.labels]
 
-    def contains_artist(self,artist):
+    def contains_artist(self, artist):
         return self.artists.has_key(artist)
 
-    def contains_label(self,label):
+    def contains_label(self, label):
         return self.labels.has_key(label)
 
-    def update_artist(self,artist,releases):
+    def update_artist(self, artist, releases):
         """ wrapper for update """
-        self.update(ARTIST,artist,releases)
+        self.update(ARTIST, artist, releases)
 
-    def update_label(self,label,releases):
+    def update_label(self, label, releases):
         """ wrapper for update """
-        self.update(LABEL,label,releases)
+        self.update(LABEL, label, releases)
 
-    def update(self,type,entity,releases):
+    def update(self, type, entity, releases):
         """ if entity exists, append releases, else add entity and releases
 
             arguments:
@@ -112,13 +112,13 @@ class zdata():
             self.entities[type][entity] = releases
 
     def pretty_print(self):
-        print_entity_releases(ARTIST,self.artists)
-        print_entity_releases(LABEL,self.labels)
+        print_entity_releases(ARTIST, self.artists)
+        print_entity_releases(LABEL, self.labels)
 
-    def __cmp__(self,other):
+    def __cmp__(self, other):
         return cmp(self.entities, other.entities)
 
-def print_entity_releases(type,entity_releases):
+def print_entity_releases(type, entity_releases):
     """ pretty print a dictionary that maps strings to sets of releases """
     if type == ARTIST:
         descriptor = "by artist: "
@@ -130,7 +130,7 @@ def print_entity_releases(type,entity_releases):
         for r in entity_releases[i]:
             r.pretty_print()
 
-def create_api_request(type,search):
+def create_api_request(type, search):
     """ create a digital-tunes api request as a string """
     url = 'http://api.digital-tunes.net/releases/'
     if type == ARTIST:
@@ -165,7 +165,7 @@ def parse_release_xml(release_xml):
         tmp = rel.getElementsByTagName('label')[0]
         tmp = tmp.getElementsByTagName('name')[0]
         label = tmp.firstChild.data
-        releases.append(release(name,artists,label,url))
+        releases.append(release(name, artists, label, url))
     return releases
 
 def parse_track_xml(track_xml):
@@ -176,33 +176,33 @@ def parse_track_xml(track_xml):
         name = tra.getElementsByTagName('name')[0].firstChild.data
         rel = tra.getElementsByTagName('release')[0]
         u= rel.getElementsByTagName('url')[0].firstChild.data
-        tracks.append(track(name,u))
+        tracks.append(track(name, u))
     return tracks
 
 def get_artist_releases(artist):
     """ wrapper for get_entity_releases"""
-    return get_entity_releases(ARTIST,artist)
+    return get_entity_releases(ARTIST, artist)
 
 def get_label_releases(label):
     """ wrapper for get_entity_releases"""
-    return get_entity_releases(LABEL,label)
+    return get_entity_releases(LABEL, label)
 
 def get_entity_releases(type, entity):
     """ wrapper: create api request, execute, and parse resulting xml """
-    ur = create_api_request(type,entity)
+    ur = create_api_request(type, entity)
     xm = do_api_call(ur)
     return set(parse_release_xml(xm))
 
 def read_key_from_file(filename):
     """ read the application specific key from a file """
-    file = open(filename,'r')
+    file = open(filename, 'r')
     key = file.readline().rstrip()
     file.close()
     return key
 
 def read_list_from_file(filename):
     """ read the list strings from a file """
-    file = open(filename,'r')
+    file = open(filename, 'r')
     l = [s.rstrip() for s in file.readlines()]
     file.close()
     return l
@@ -212,27 +212,27 @@ def read_cache(filename):
     if not os.path.isfile(filename):
         return zdata()
     else:
-        file = open(filename,'r')
+        file = open(filename, 'r')
         zd = pickle.loads(pickle.load(file))
         file.close()
         return zd
 
-def write_cache(zd,filename):
+def write_cache(zd, filename):
     """ write zdata instance to filesystem """
-    file = open(filename,'w')
-    pickle.dump(pickle.dumps(zd),file)
+    file = open(filename, 'w')
+    pickle.dump(pickle.dumps(zd), file)
     file.flush()
     file.close()
 
 def check_updates_artists(artists):
     """ wrapper for check_updates """
-    return check_updates(ARTIST,artists)
+    return check_updates(ARTIST, artists)
 
 def check_updates_labels(labels):
     """ wrapper for check_updates """
-    return check_updates(LABEL,labels)
+    return check_updates(LABEL, labels)
 
-def check_updates(type,entities):
+def check_updates(type, entities):
     """ check for new releases
 
         This function will do the following: for each entity in a list of
@@ -252,16 +252,16 @@ def check_updates(type,entities):
     """
     new_releases = dict()
     for e in entities:
-        new = get_entity_releases(type,e)
+        new = get_entity_releases(type, e)
         if conf.cache.entities[type].has_key(e):
             old = conf.cache.entities[type][e]
             diff = new.difference(old)
             if len(diff) > 0:
                 new_releases[e] = diff
-                conf.cache.update(type,e,diff)
+                conf.cache.update(type, e, diff)
         else:
             new_releases[e] = new
-            conf.cache.update(type,e,new)
+            conf.cache.update(type, e, new)
     return new_releases
 
 def parse_cmd():
@@ -296,8 +296,8 @@ def parse_cmd():
     labels = read_list_from_file(options.labels)
     cache = read_cache(options.cache_file)
 
-    conf = configuration(options.cache_file,cache,key)
-    return (conf,artists,labels)
+    conf = configuration(options.cache_file, cache, key)
+    return (conf, artists, labels)
 
 def main():
     global conf
@@ -308,7 +308,7 @@ def main():
     print_entity_releases(ARTIST, new_rel_artists)
     print "The following labels have released new material:"
     print_entity_releases(LABEL, new_rel_labels)
-    write_cache(conf.cache,conf.cache_file)
+    write_cache(conf.cache, conf.cache_file)
 
 if __name__ ==  "__main__":
     main()

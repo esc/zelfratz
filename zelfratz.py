@@ -21,10 +21,11 @@ conf = None
 
 class configuration():
     """ holds zelfratz config """
-    def __init__(self, cache_file, cache, key):
+    def __init__(self, cache_file, cache, key, debug):
         self.cache_file = cache_file
         self.cache = cache
         self.key = key
+        self.debug = debug
 
 class release():
     """ holds really basic information about a release """
@@ -130,6 +131,10 @@ def print_entity_releases(type, entity_releases):
         for r in entity_releases[i]:
             r.pretty_print()
 
+def print_debug(message):
+    if conf.debug == True:
+        print message
+
 def create_api_request(type, search):
     """ create a digital-tunes api request as a string """
     url = 'http://api.digital-tunes.net/releases/'
@@ -189,7 +194,9 @@ def get_label_releases(label):
 
 def get_entity_releases(type, entity):
     """ wrapper: create api request, execute, and parse resulting xml """
+    print_debug("searching for: " + entity)
     ur = create_api_request(type, entity)
+    print_debug("api string is: " + ur)
     xm = do_api_call(ur)
     return set(parse_release_xml(xm))
 
@@ -289,6 +296,12 @@ def parse_cmd():
             help='file to use as cache',
             dest='cache_file')
 
+    p.add_option('--debug', '-d',
+            action='store_true',
+            default=False,
+            help='output debugging information',
+            dest='debug')
+
     options, arguments = p.parse_args()
 
     key = read_key_from_file(options.apikey)
@@ -296,7 +309,7 @@ def parse_cmd():
     labels = read_list_from_file(options.labels)
     cache = read_cache(options.cache_file)
 
-    conf = configuration(options.cache_file, cache, key)
+    conf = configuration(options.cache_file, cache, key, options.debug)
     return (conf, artists, labels)
 
 def main():

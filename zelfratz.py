@@ -285,7 +285,7 @@ def parse_cmd():
             dest='labels')
 
     p.add_option('--cache', '-c',
-            default=home + '~/.zelfratz/cache',
+            default=home + '/.zelfratz/cache',
             help='file to use as cache',
             dest='cache_file')
 

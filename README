@@ -4,15 +4,56 @@ README for zelfratz
 intro
 -----
 
-'zelfratz' is a tool to monitor artists and labels via the digital-tunes api. It
+'Zelfratz' is a tool to monitor artists and labels via the digital-tunes api. It
 is written entirely in python. The name was chosen as it was the first word i
 came up with that returned no results on google.
 
 usage
 -----
 
-The way the author uses it, is to have it running on a server, and send email
-about updates once a day.
+Usage: zelfratz.py [options]
+
+Options:
+  -h, --help            show this help message and exit
+  -k APIKEY, --apikey=APIKEY
+                        file that contains the api key
+  -a ARTISTS, --artists=ARTISTS
+                        file that contains a list of artists
+  -l LABELS, --labels=LABELS
+                        file that contains a list of labels
+  -c CACHE_FILE, --cache=CACHE_FILE
+                        file to use as cache
+
+I use it to send me daily update emails.
+
+how-2
+-----
+
+By default, zelfratz config files and cache are in ~/.zelfratz.
+
+You will need to get an api-key from digital tunes:
+
+http://www.digital-tunes.net/affiliates/new
+
+Store this in the file:
+
+~/.zelfratz/api-key
+
+Now add artists and labels you like into the following two files:
+
+~/.zelfratz/artists
+~/.zelfratz/labels
+
+You can now run zelfratz, it will query digital tunes, output the results to
+stdout and store them in the file:
+
+~/.zelfratz/cache
+
+To receive daily updates,  i use the follwing script as a cronjob:
+
+PATH-TO/zelfratz.py | mutt -s "daily updates " -e "set \
+from=zelfratz@YOURDOMAIN.COM" -e "set realname=zelfratz" \
+TARGETNAME@YOURDOMAIN.COM
 
 docs
 ----
@@ -27,13 +68,13 @@ zelfratz depends on the following additional python libs:
 
 pycurl
 
-authors
--------
+author
+------
 
 Valentin 'esc' Haenel <emergencyselfconstruct@gmail.com>
 
 copying
 -------
 
-zelfrtz is available under WTF public licence 
+zelfratz is available under WTF public licence, see file COPYING for details.
 

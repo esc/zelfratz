@@ -37,10 +37,10 @@ class release():
         self.values = (self.name, self.artists, self.label, self.url)
 
     def pretty_print(self):
-        print "release: ", self.name.encode()
-        print "by: ", [a.encode() for a in self.artists]
-        print "on label: ", self.label.encode()
-        print "url: ", self.url.encode()
+        print "release: ", self.name.encode('ascii','ignore')
+        print "by: ", [a.encode('ascii','ignore') for a in self.artists]
+        print "on label: ", self.label.encode('ascii','ignore')
+        print "url: ", self.url.encode('ascii','ignore')
 
     def __cmp__(self, other):
         return cmp(self.values, other.values)
@@ -60,8 +60,8 @@ class track():
         self.name = name
         self.url = url
     def pretty_print(self):
-        print "track: ", self.name.encode()
-        print "url: ", self.url.encode()
+        print "track: ", self.name.encode('ascii','ignore')
+        print "url: ", self.url.encode('ascii','ignore')
     def __cmp__(self, other):
         return cmp((self.name, self.url), (other.name, other.url))
 

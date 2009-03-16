@@ -12,7 +12,7 @@
 
 """ zelfratz is a tool to track artist and label releases on digital-tunes """
 
-import pycurl, xml.dom.minidom, StringIO, optparse, os, pickle
+import pycurl, xml.dom.minidom, StringIO, optparse, os, pickle, urllib2
 
 ARTIST = 0
 LABEL = 1
@@ -140,7 +140,7 @@ def create_api_request(type, search):
     else:
         print "create_api_request invoked with incorrect argument:" , type
         sys.exit()
-    url += search + "?key=" + conf.key
+    url += urllib2.quote(search) + "?key=" + conf.key
     return url
 
 def do_api_call(url):

@@ -12,8 +12,10 @@
 
 """ zelfratz is a tool to track artist and label releases on digital-tunes """
 
-import pycurl, xml.dom.minidom, StringIO, optparse, os, pickle, urllib2
+import pycurl, xml.dom.minidom, StringIO, optparse, os, pickle, urllib2, sys
 
+VERSION = 0.1
+AUTHOR = 'esc'
 ARTIST = 0
 LABEL = 1
 curl = pycurl.Curl()
@@ -302,7 +304,18 @@ def parse_cmd():
             help='output debugging information',
             dest='debug')
 
+    p.add_option('--version, ', '-v',
+            action='store_true',
+            default=False,
+            help='print version and exit',
+            dest='version')
+
     options, arguments = p.parse_args()
+
+    if options.version:
+        print "zelfratz ", VERSION
+        print "(!C) 2009 ", AUTHOR
+        sys.exit()
 
     key = read_key_from_file(options.apikey)
     artists = read_list_from_file(options.artists)

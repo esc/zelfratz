@@ -24,6 +24,7 @@ Options:
   -c CACHE_FILE, --cache=CACHE_FILE
                         file to use as cache
   -d, --debug           output debugging information
+  -v, --version,        print version and exit
 
 I use it to send me daily update emails.
 

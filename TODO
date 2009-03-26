@@ -1,5 +1,4 @@
-storage of existing tracks
 zdata unit test
-figure out a reporting scheme, e.g. newsfeed, mail
-clarify if each user must have a seperate api-key
+figure out if it really needs to send email itself, or if it can rely on
+external tools
 implement a settings file

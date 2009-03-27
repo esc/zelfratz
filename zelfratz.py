@@ -14,7 +14,7 @@
 
 import pycurl, xml.dom.minidom, StringIO, optparse, os, pickle, urllib2, sys
 
-VERSION = 0.1
+VERSION = 0.2
 AUTHOR = 'esc'
 ARTIST = 0
 LABEL = 1

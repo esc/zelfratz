@@ -12,7 +12,8 @@
 
 """ zelfratz is a tool to track artist and label releases on digital-tunes """
 
-import pycurl, xml.dom.minidom, StringIO, optparse, os, pickle, urllib2, sys
+import pycurl, xml.dom.minidom, StringIO, optparse, os, pickle, urllib2, sys, \
+inspect
 
 VERSION = 0.2
 AUTHOR = 'esc'
@@ -20,6 +21,21 @@ ARTIST = 0
 LABEL = 1
 curl = pycurl.Curl()
 conf = None
+
+def etype_check(func):
+    """ decorator to check that the correct etype encoding is passed """
+    def decorate(*arg, **kwargs):
+        arg_names = inspect.getargspec(func)[0]
+        if 'etype' in arg_names:
+            id = arg_names.index('etype')
+            if arg[id] not in (ARTIST,LABEL):
+                err_str = "create_api_request invoked with incorrect argument:" \
+                + str(arg[id]) + "\nUse zelfratz.ARTIST or zelfratz.LABEL instead of raw " + \
+                "integers."
+                raise(TypeError(err_str))
+        res = func(*arg , **kwargs)
+        return res
+    return decorate
 
 class configuration():
     """ holds zelfratz config """
@@ -87,21 +103,22 @@ class zdata():
         """ wrapper for update """
         self.update(LABEL, label, releases)
 
-    def update(self, type, entity, releases):
+    @etype_check
+    def update(self, etype, entity, releases):
         """ if entity exists, append releases, else add entity and releases
 
             arguments:
-            type        - entity type constant
+            etype        - entity type constant
             entity      - string describing the entity
             releases    - a set of release instances
 
         """
-        if self.entities[type].has_key(entity):
-            rel_set = self.entities[type][entity]
+        if self.entities[etype].has_key(entity):
+            rel_set = self.entities[etype][entity]
             for r in releases:
                 rel_set.add(r)
         else:
-            self.entities[type][entity] = releases
+            self.entities[etype][entity] = releases
 
     def pretty_print(self):
         print_entity_releases(ARTIST, self.artists)
@@ -110,11 +127,12 @@ class zdata():
     def __cmp__(self, other):
         return cmp(self.entities, other.entities)
 
-def print_entity_releases(type, entity_releases):
+@etype_check
+def print_entity_releases(etype, entity_releases):
     """ pretty print a dictionary that maps strings to sets of releases """
-    if type == ARTIST:
+    if etype == ARTIST:
         descriptor = "by artist: "
-    else:
+    elif etype == LABEL:
         descriptor = "on label:"
     for i in entity_releases.keys():
         print '####################'
@@ -126,16 +144,14 @@ def print_debug(message):
     if conf.debug == True:
         print message
 
-def create_api_request(type, search):
+@etype_check
+def create_api_request(etype, search):
     """ create a digital-tunes api request as a string """
     url = 'http://api.digital-tunes.net/releases/'
-    if type == ARTIST:
+    if etype == ARTIST:
         url += "by_artist/"
-    elif type == LABEL:
+    elif etype == LABEL:
         url += "by_label/"
-    else:
-        print "create_api_request invoked with incorrect argument:" , type
-        sys.exit()
     url += urllib2.quote(search) + "?key=" + conf.key
     return url
 
@@ -172,10 +188,11 @@ def get_label_releases(label):
     """ wrapper for get_entity_releases"""
     return get_entity_releases(LABEL, label)
 
-def get_entity_releases(type, entity):
+@etype_check
+def get_entity_releases(etype, entity):
     """ wrapper: create api request, execute, and parse resulting xml """
     print_debug("searching for: " + entity)
-    ur = create_api_request(type, entity)
+    ur = create_api_request(etype, entity)
     print_debug("api string is: " + ur)
     xm = do_api_call(ur)
     return set(parse_release_xml(xm))
@@ -219,7 +236,8 @@ def check_updates_labels(labels):
     """ wrapper for check_updates """
     return check_updates(LABEL, labels)
 
-def check_updates(type, entities):
+@etype_check
+def check_updates(etype, entities):
     """ check for new releases
 
         This function will do the following: for each entity in a list of
@@ -230,7 +248,7 @@ def check_updates(type, entities):
         all the releases are known return nothing for this entity.
 
         arguments:
-        type        - entity type constant
+        etype        - entity type constant
         entities    - a list of entities
 
         returns:
@@ -239,17 +257,19 @@ def check_updates(type, entities):
     """
     new_releases = dict()
     for e in entities:
-        new = get_entity_releases(type, e)
-        if conf.cache.entities[type].has_key(e):
-            old = conf.cache.entities[type][e]
+        new = get_entity_releases(etype, e)
+        if conf.cache.entities[etype].has_key(e):
+            old = conf.cache.entities[etype][e]
             diff = new.difference(old)
             if len(diff) > 0:
                 new_releases[e] = diff
-                conf.cache.update(type, e, diff)
+                conf.cache.update(etype, e, diff)
         else:
             new_releases[e] = new
-            conf.cache.update(type, e, new)
+            conf.cache.update(etype, e, new)
     return new_releases
+
+
 
 def parse_cmd():
     """ parse the command line options and load the files """

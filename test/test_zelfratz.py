@@ -23,9 +23,9 @@ def enable_override(func):
         return res
     return wrapper
 
-def zelfratz_get_entity_releases_OVERRIDE(type, entity):
+def zelfratz_get_entity_releases_OVERRIDE(etype, entity):
     print "zelfratz_get_entity_releases_OVERRIDE successful"
-    if type == zelfratz.LABEL:
+    if etype == zelfratz.LABEL:
         return load_xml_from_file('releases_by_label.xml')
     else:
         return load_xml_from_file('releases_by_artist.xml')

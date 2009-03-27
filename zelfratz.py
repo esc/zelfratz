@@ -23,7 +23,7 @@ conf = None
 
 class configuration():
     """ holds zelfratz config """
-    def __init__(self, cache_file, cache, key, debug):
+    def __init__(self, cache_file, cache, key, debug=False):
         self.cache_file = cache_file
         self.cache = cache
         self.key = key
@@ -300,7 +300,7 @@ def parse_cmd():
     labels = read_list_from_file(options.labels)
     cache = read_cache(options.cache_file)
 
-    conf = configuration(options.cache_file, cache, key, options.debug)
+    conf = configuration(options.cache_file, cache, key, debug=options.debug)
     return (conf, artists, labels)
 
 def main():

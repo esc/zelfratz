@@ -74,8 +74,6 @@ class test_zelfratz(unittest.TestCase):
     def test_parse_xml(self):
         self.helper_test_parse_xml('pickled_releases',
                 'releases_by_label.xml', zelfratz.parse_release_xml)
-        self.helper_test_parse_xml('pickled_tracks',
-                'tracks_by_artist.xml', zelfratz.parse_track_xml)
 
     def helper_test_parse_xml(self, pickled_stuff, xml_stuff, parse_func):
         target = unpickle(pickled_stuff)

@@ -57,17 +57,6 @@ class release():
             self.hash = result
         return self.hash
 
-class track():
-    """ holds really basic information about a track """
-    def __init__(self, name, url):
-        self.name = name
-        self.url = url
-    def pretty_print(self):
-        print "track: ", self.name.encode('ascii','ignore')
-        print "url: ", self.url.encode('ascii','ignore')
-    def __cmp__(self, other):
-        return cmp((self.name, self.url), (other.name, other.url))
-
 class zdata():
     """ holds all user data for zelfratz
 
@@ -174,17 +163,6 @@ def parse_release_xml(release_xml):
         label = tmp.firstChild.data
         releases.append(release(name, artists, label, url))
     return releases
-
-def parse_track_xml(track_xml):
-    """ parse xml returned by a 'track' query into a list of track instances """
-    x = xml.dom.minidom.parseString(track_xml)
-    tracks = list()
-    for tra in x.getElementsByTagName('track'):
-        name = tra.getElementsByTagName('name')[0].firstChild.data
-        rel = tra.getElementsByTagName('release')[0]
-        u= rel.getElementsByTagName('url')[0].firstChild.data
-        tracks.append(track(name, u))
-    return tracks
 
 def get_artist_releases(artist):
     """ wrapper for get_entity_releases"""

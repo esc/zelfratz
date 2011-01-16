@@ -329,11 +329,13 @@ def main():
     global conf
     conf, artists, labels = parse_cmd()
     new_rel_artists = check_updates_artists(artists)
+    if new_rel_artists:
+        print "The following artists have released new material:"
+        print_entity_releases(ARTIST, new_rel_artists)
     new_rel_labels = check_updates_labels(labels)
-    print "The following artists have released new material:"
-    print_entity_releases(ARTIST, new_rel_artists)
-    print "The following labels have released new material:"
-    print_entity_releases(LABEL, new_rel_labels)
+    if new_rel_labels:
+        print "The following labels have released new material:"
+        print_entity_releases(LABEL, new_rel_labels)
     write_cache(conf.cache, conf.cache_file)
 
 if __name__ ==  "__main__":
